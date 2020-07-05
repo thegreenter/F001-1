@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Sunat FE',
   tagline: 'Facturación Electrónica en Perú',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://thegreenter.github.io/sunat-fe',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'Greenter', // Usually your GitHub org/user name.
