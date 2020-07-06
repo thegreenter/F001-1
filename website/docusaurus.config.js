@@ -11,7 +11,7 @@ module.exports = {
       title: 'Sunat FE',
       logo: {
         alt: 'Sunat FE logo',
-        src: 'img/sunat.svg',
+        src: 'img/sunat-logo.png',
       },
       links: [
         {
