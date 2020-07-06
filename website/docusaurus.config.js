@@ -32,7 +32,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Desarrolladores',
+          title: 'Developers',
           items: [
             {
               label: 'Docs',
