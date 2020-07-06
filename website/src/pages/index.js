@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Para desarrolladores</>,
+    title: <>Desarrolladores</>,
     imageUrl: 'img/developer.svg',
     description: (
       <>
@@ -18,7 +18,7 @@ const features = [
     ),
   },
   {
-    title: <>Para empresas</>,
+    title: <>Empresas</>,
     imageUrl: 'img/company.svg',
     description: (
       <>
@@ -28,7 +28,7 @@ const features = [
     ),
   },
   {
-    title: <>Para personas</>,
+    title: <>Personas</>,
     imageUrl: 'img/person.svg',
     description: (
       <>
