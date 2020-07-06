@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Sunat FE',
   tagline: 'Facturación Electrónica en Perú',
-  url: 'https://thegreenter.github.io/sunat-fe',
-  baseUrl: '/',
+  url: 'https://thegreenter.github.io',
+  baseUrl: '/sunat-fe/',
   favicon: 'img/favicon.ico',
   organizationName: 'Greenter', // Usually your GitHub org/user name.
   projectName: 'sunat-fe', // Usually your repo name.
@@ -32,10 +32,10 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Developers',
+          title: 'Docs',
           items: [
             {
-              label: 'Docs',
+              label: 'Inicio',
               to: 'docs/',
             },
           ],
@@ -43,10 +43,6 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/sunat',
-            },
             {
               label: 'Forum',
               href: 'https://community.greenter.dev/',
