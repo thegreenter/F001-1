@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/developer.svg',
     description: (
       <>
-        Ofrece una guía de inicio para elaborar facturas electronicas, independiente 
+        Ofrece una guía de inicio para elaborar facturas electrónicas, independiente 
         del lenguaje de programación empleado.
       </>
     ),
@@ -22,7 +22,7 @@ const features = [
     imageUrl: 'img/company.svg',
     description: (
       <>
-        Conocer sobre las distintas opciones disponibles para empezar a emitir comprobantes electronicos,
+        Conocer sobre las distintas opciones disponibles para empezar a emitir comprobantes electrónicos,
         y los requerimientos necesarios.
       </>
     ),
@@ -32,7 +32,7 @@ const features = [
     imageUrl: 'img/person.svg',
     description: (
       <>
-        Ofrece una lista de herramientas para confirmar la válidez de los comprobantes electronicos
+        Encuentra diferentes opciones de utilidad que puedes aplicar a tus comprobantes electrónicos
         recibidos.
       </>
     ),
