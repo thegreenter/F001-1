@@ -66,7 +66,7 @@ Además de generar estos archivos XML, se necesita firmarlos digitalmente con un
 
 ## Envío a SUNAT
 
-SUNAT expone varios `webservices` basados en `SOAP`, para recepcionar los comprobantes electrónicos de las empresas, aunque previamente tendremos que comprimir nuestros comprobantes (XML firmados) en formato `zip`, ya que es la entrada de datos que espera el webservices.
+SUNAT expone varios `webservices` basados en `SOAP` (para pruebas y producción), para recepcionar los comprobantes electrónicos de las empresas, aunque previamente tendremos que comprimir nuestros comprobantes (XML firmados) en formato `zip`, ya que es la entrada de datos que espera el webservices.
 
 :::caution Plazos
 
