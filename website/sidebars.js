@@ -1,10 +1,9 @@
 module.exports = {
   docs: [
-    'introduction',
     {
       type: 'category',
       label: 'Inicio',
-      items: ['basic', 'autorization', 'obligaciones'],
+      items: ['introduction', 'basic', 'autorization', 'obligaciones'],
     },
     {
       type: 'category',
