@@ -9,12 +9,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Guias',
-      items: ['doc1', 'doc2', 'doc3'],
+      items: [],
     },
     {
       type: 'category',
       label: 'Herramientas',
-      items: ['mdx'],
+      items: [],
     },
   ],
 };
