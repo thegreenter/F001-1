@@ -4,7 +4,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Inicio',
-      items: ['basic'],
+      items: ['basic', 'autorization'],
     },
     {
       type: 'category',
