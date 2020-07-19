@@ -6,6 +6,23 @@ sidebar_label: Conceptos
 
 La facturación electrónica implica conocer algunos aspectos que difieren de la facturación tradicional, antes de empezar la implementación.
 
+## Comprobantes electrónicos
+Hay una lista de comprobantes que se pueden emitir electrónicamente, aunque no todos se pueden emitir desde los sistemas del contribuyente (SEE).
+
+
+|Compobante                      |  SEE  |
+|--------------------------------|-------|
+| Factura                        |  ✅   |
+| Boleta                         |  ✅   |
+| Nota de crédito                |  ✅   |
+| Nota de débito                 |  ✅   |
+| Comprobante de Retención       |  ✅   |
+| Comprobante de Percepción      |  ✅   |
+| Recibo por honorarios          |  ➖   |
+| Recibo de servicios públicos   |  ✅   |
+| Guía de remisión               |  ✅   |
+| Liquidación de compra          |  ➖   |
+
 ## Series y correlativos
 Al emitir comprobantes electrónicos ya no necesita autorizar o informar a SUNAT las series que utilizará, pero debe seguir ciertos criterios que verá a continuación, en el caso de los correlativos siguen siendo numéricos.
 
@@ -13,9 +30,9 @@ Al emitir comprobantes electrónicos ya no necesita autorizar o informar a SUNAT
 La serie de facturas empiezan con la letra `F`, seguido de 3 caracterse alfanumericos.   
 Ejemplos válidos e inválidos:
 
-- ✅ `F001` 
-- ✅ `FAAA`
-- ✅ `FB01`
+- ✔️ `F001` 
+- ✔️ `FAAA`
+- ✔️ `FB01`
 - ❌ `0001`
 - ❌ `B001`
 - ❌ `F03`
@@ -31,9 +48,9 @@ Si una nota de credito/debito se emite referenciando a una factura, esta debe cu
 La serie de boletas de venta empiezan con la letra `B`, seguido de 3 caracterse alfanumericos.   
 Ejemplos válidos e inválidos:
 
-- ✅ `B001` 
-- ✅ `BAAZ`
-- ✅ `BA03`
+- ✔️ `B001` 
+- ✔️ `BAAZ`
+- ✔️ `BA03`
 - ❌ `0001`
 - ❌ `F001`
 - ❌ `B01`
