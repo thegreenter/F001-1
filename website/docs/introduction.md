@@ -17,6 +17,6 @@ export const Img = ({title, url}) => ( <img style={{
       margin: '4rem auto',
       width: '5rem',
       display: 'flex'
-    }} src={useBaseUrl(url)} alt="{title}"></img>);
+    }} src={useBaseUrl(url)} alt={title}></img>);
 
 <Img url="img/sunat_logo.png" title="Sunat Logo"></Img>
