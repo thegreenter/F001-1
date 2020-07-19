@@ -12,6 +12,9 @@ Contar con:
 - Un certificado digital
 - Clave SOL de un usuario secundario
 
+Aspectos técnicos
+- Conocimientos en manejo de elementos [XML](https://www.w3schools.com/xml/), y conocimientos básicos en [XSD](https://www.w3schools.com/xml/schema_intro.asp).
+
 :::note Nota
 
 En entorno de desarrollo, podremos utilizar cualquier certificado de prueba, no necesitamos adquirir uno de momento, tambien contamos con una clave SOL de prueba:
