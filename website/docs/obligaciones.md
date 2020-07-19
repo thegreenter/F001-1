@@ -12,13 +12,12 @@ Existen algunas obligaciones de parte del emisor electrónico que debe cumplir, 
 
 Se debe almacenar los comprobantes electrónicos, y deben estar disponible para sus clientes, utilizando algún medio digital, y tambien debe asegurar que solo el adquiriente puede acceder a dicha información.
 
-export const Img = ({title, url}) => ( <img style={{
+<img style={{
       margin: '2rem auto',
       width: '12rem',
       display: 'flex'
-    }} src={useBaseUrl(url)} alt={title}></img>);
-
-<Img url="img/files_user.svg" title="Facturas de Usuario"></Img>
+    }}
+    src={useBaseUrl('img/files_user.svg')} title="Facturas de Usuario"></img>
 
 ## Comprobantes Físicos
 
