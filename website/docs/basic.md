@@ -68,6 +68,12 @@ Además de generar estos archivos XML, se necesita firmarlos digitalmente con un
 
 SUNAT expone varios `webservices` basados en `SOAP`, para recepcionar los comprobantes electrónicos de las empresas, aunque previamente tendremos que comprimir nuestros comprobantes (XML firmados) en formato `zip`, ya que es la entrada de datos que espera el webservices.
 
+:::caution Plazos
+
+Los comprobantes deberian ser comunicados a SUNAT lo mas pronto posible, posterior a su emisión, aunque tienen **un plazo de 7 dias**.
+
+:::
+
 ## Terceras partes
 Sunat ha delegado cierta responsibilidad sobre algunas empresas para llevar a cabo el proceso de facturación electrónica en el pais, hay una clasificacion de esto.
 
