@@ -10,6 +10,12 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  --ifm-hero-text-color: #fff;
+}
+
+.getStarted {
+  --ifm-button-background-color: #fff;
+  --ifm-font-color-base: var(--ifm-color-gray-900);
 }
 
 @media screen and (max-width: 966px) {
