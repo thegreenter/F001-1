@@ -46,7 +46,11 @@ Con los datos de arriba esta sería la representación en XML.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
   <ext:UBLExtensions>
     <ext:UBLExtension>
       <ext:ExtensionContent>
@@ -283,3 +287,53 @@ Con los datos de arriba esta sería la representación en XML.
 ```
 
 > Hay algunos atributos en el XML que no son obligatorios, puedes ver esa versión [aquí](https://gist.github.com/giansalex/6cab789ed1d9ee838216c3847862a030)
+
+Para saber que etiqueta del `XML` le corresponde a cada dato, tienes que dirigirte a [Reglas de Validación SUNAT](https://cpe.sunat.gob.pe/node/88#item-1), alli deberás descargar la versión más reciente, encontrarás en ese archivo Excel todos los comprobantes electrónicos disponibles, los datos que SUNAT espera recibir y en que etiquetas especificas del XML.  
+
+## Catálogos
+
+Como habrás notado, en el ejemplo hay varias indicaciones sobre `Catálogos`, existen varias listas de códigos que representan algún tipo de información, por ejemplo:
+
+- Tipos de Comprobantes ⬅️ `Catalogo 01`
+  - **01** - Factura
+  - **03** - Boleta
+  - etc
+- Tipos de Documento de Identidad ⬅️ `Catalogo 06`
+  - **0** - No domiciliado
+  - **1** - DNI
+  - **6** - RUC
+  - etc
+- etc
+
+Para obtener las listas completas de los catálogos, puedes encontrarlo en el excel de [Reglas de validaciones de SUNAT](https://cpe.sunat.gob.pe/node/88#item-1).
+
+:::tip Github
+
+También puedes encontrar esta lista de catalogos en diferentes formatos [aquí](https://eliutimana.github.io/SunatCatalogos/).    
+📖 _Colaboración de [@eliutimana](https://github.com/eliutimana/)_
+
+:::
+
+## Validación
+
+Para comprobar que nuestros sean validos, existen 2 tipos de validaciones:
+1. Validación de esquema (UBL 2.1 XSD)
+2. Validación de contenido (Reglas de validación de SUNAT)
+
+### Validación con XSD
+Para verificar que el XML construido cumple con el esquema del estándar UBL, debemos primero contar con los XSD (`XML Schema Definition`), para el caso de SUNAT se puede descargar desde [aquí](https://github.com/thegreenter/ubl-validator/tree/master/src/xsd/2.1), y la verificación la podemos realizar con cualquier herramienta disponible.
+> Para una factura, el XSD a utilizar debe ser: `maindoc/UBL-Invoice-2.1.xsd`.
+
+- [Tutorial validar xml con notepad](https://www.3engine.net/wp/2017/03/validar-un-xml-mediante-notepad/) 
+
+
+### Validación con las reglas de SUNAT
+SUNAT también validará el contenido de nuestra factura, por ejemplo que la serie inicie con `F`, o que algún codigo de catálogo no se encuentre en la lista, aquí también se aplican validaciones de cálculo, como por ejemplo que el IGV este calculado correctamente o la suma de valor venta de los detalles sea igual al de la cabecera.
+
+La forma mas fácil de validar esto es enviarlo al `webservice` de SUNAT, allí nos indicará los errores u observacionse que tengamos en el XML; aunque también se podria realizar utilizando los archivos `XSL` que sunat expone en este [enlace](https://cpe.sunat.gob.pe/sites/default/files/inline-files/XSL%20-%20UBL%202.1.zip), pero esta orientado a utilizar herramiente en el entorno de java.
+
+:::info
+
+Al enviar el XML a SUNAT, este realizará ambas validaciones, utilizando los XSD del `UBL` y las validaciones de contenido.  
+
+:::
