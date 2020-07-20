@@ -8,7 +8,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Guias',
-      items: ['requirements'],
+      items: ['requirements', 'factura'],
     },
     {
       type: 'category',
