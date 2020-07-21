@@ -8,12 +8,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Guias',
-      items: ['requirements', 'factura'],
+      items: ['requirements', 'factura', 'sign', 'webservices'],
     },
     {
       type: 'category',
       label: 'Herramientas',
-      items: [],
+      items: ['tools'],
     },
   ],
 };
