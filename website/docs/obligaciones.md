@@ -27,4 +27,5 @@ Hay una lista de consideraciones adicionales que puede revisar [aquí](https://c
 
 ## Representación Impresa
 
-Los archivos 
+La principal diferencia con las facturas fisicas, es que las impresiones deben incluir un codigo QR, puedes ver este [ejemplo](https://greenter-sample.herokuapp.com/examples/report/factura.php).
+ 
