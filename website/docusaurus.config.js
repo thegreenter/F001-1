@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Sunat FE',
-  tagline: 'Facturación Electrónica en Perú',
+  title: 'FE Primer',
+  tagline: 'Facturación Electrónica en Perú 🌐 SUNAT',
   url: 'https://thegreenter.github.io',
   baseUrl: '/sunat-fe/',
   favicon: 'img/favicon.ico',
@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'sunat-fe', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Sunat FE',
+      title: 'FE Primer',
       logo: {
         alt: 'Sunat FE logo',
         src: 'img/logo.svg',
