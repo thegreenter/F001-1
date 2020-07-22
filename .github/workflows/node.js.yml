@@ -22,6 +22,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}  
     - name: Release to GitHub Pages
+      working-directory: website
       env:
         GIT_USER: git
       run: |
