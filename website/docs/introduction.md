@@ -13,10 +13,8 @@ provistos por [SUNAT](http://www.sunat.gob.pe/), aunque muchos de estos se encue
 Se espera que encuentre en este sitio, una guía ordenada y requerimientos que debe cumplir para llevar acabo la implementacion de la facturación electrónica en sus sistemas, es decir nos 
 enfocaremos en la emisión de comprobantes desde los sistemas del contribuyente (**SEE**)
 
-export const Img = ({title, url}) => ( <img style={{
+<img style={{
       margin: '4rem auto',
       width: '5rem',
       display: 'flex'
-    }} src={useBaseUrl(url)} alt={title}></img>);
-
-<Img url="img/sunat_logo.png" title="Sunat Logo"></Img>
+    }} src={useBaseUrl('img/sunat-logo.png')} alt="Sunat Logo"></img>
