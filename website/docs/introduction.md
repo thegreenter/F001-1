@@ -10,7 +10,7 @@ Este sitio ha sido creado con la finalidad de ser un portal para desarrolladores
 implementar la facturación electrónica en sus sistemas, y conocer los detalles para llevarlo acabo; aquí se tendrá como fuente los documentos 
 provistos por [SUNAT](http://www.sunat.gob.pe/) tomando en cuenta las últimas actualizaciones. 
 
-Se espera que encuentre en este sitio, una guía ordenada y requerimientos que debe cumplir para llevar acabo la implementacion de la facturación electrónica en sus sistemas, es decir nos 
+Se espera que encuentre una guía ordenada y requerimientos que debe considerar para llevar acabo la implementacion de la facturación electrónica, específicamente nos 
 enfocaremos en la emisión de comprobantes desde los sistemas del contribuyente (**SEE**)
 
 <img style={{
