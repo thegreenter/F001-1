@@ -1,11 +1,11 @@
 module.exports = {
   title: 'FE Primer',
   tagline: 'Facturación Electrónica en Perú 🌐 SUNAT',
-  url: 'https://thegreenter.github.io',
-  baseUrl: '/sunat-fe/',
+  url: 'https://fe-primer.greenter.dev',
+  baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'Greenter', // Usually your GitHub org/user name.
-  projectName: 'sunat-fe', // Usually your repo name.
+  organizationName: 'thegreenter',
+  projectName: 'F001-1',
   themeConfig: {
     navbar: {
       title: 'FE Primer',
@@ -22,7 +22,7 @@ module.exports = {
         },
         //{to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/thegreenter/sunat-fe',
+          href: 'https://github.com/thegreenter/F001-1',
           label: 'GitHub',
           position: 'right',
         },
@@ -58,7 +58,7 @@ module.exports = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/thegreenter/sunat-fe',
+              href: 'https://github.com/thegreenter/F001-1',
             },
           ],
         },
@@ -76,13 +76,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/thegreenter/sunat-fe/edit/master/website/',
+            'https://github.com/thegreenter/F001-1/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/thegreenter/sunat-fe/edit/master/website/blog/',
+            'https://github.com/thegreenter/F001-1/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
