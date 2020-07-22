@@ -59,6 +59,12 @@ Ejemplos válidos e inválidos:
 Si una nota de credito/debito se emite referenciando a una boleta, esta debe cumplir con el mismo formato de serie, es decir para el caso de Facturas, sus notas de credito/debito deben tener series que empiecen con la letra `B`.
 :::
 
+:::note
+
+Las series tipo `E001-1`, lo poseen comprobantes emitidos desde el Portal de SUNAT.  
+
+:::
+
 ## Firma digital
 Los comprobantes electrónicos técnicamente son archivos en formato XML, que siguen las especificaciones de **OASIS Universal Business Language (UBL)**, existen varias versiones, actualmente SUNAT exige utilizar la versión [UBL v2.1](http://www.datypic.com/sc/ubl21/ss.html).
 
