@@ -13,19 +13,17 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: Configure git
-      run: |
-          git config user.email "github-action@users.noreply.github.com"
-          git config user.name "GitHub Action"
-          git config user.password ${GH_TOKEN}
-          echo "::set-env name=GIT_USER::${GITHUB_ACTOR}:${GH_TOKEN}"
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}  
     - name: Release to GitHub Pages
       working-directory: website
       env:
-        GIT_USER: git
+        GH_NAME: 'giansalex'
+        GH_EMAIL: 'giansalex@gmail.com'
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}  
       run: |
+        git config --global user.name "${GH_NAME}"
+        git config --global user.email "${GH_EMAIL}"
+        echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
+        GIT_USER="${GH_NAME}"
         if [ -e yarn.lock ]; then
         yarn install --frozen-lockfile
         elif [ -e package-lock.json ]; then
