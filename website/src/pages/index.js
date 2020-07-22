@@ -60,7 +60,7 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Documentación para implementar la facturación electrónica en nuestros sistemas.">
+      description="Guia de inicio para implementar la facturación electrónica en Perú - SUNAT.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
