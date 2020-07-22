@@ -1,0 +1,35 @@
+name: GhPages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Configure git
+      run: |
+          git config user.email "github-action@users.noreply.github.com"
+          git config user.name "GitHub Action"
+          git config user.password ${GH_TOKEN}
+          echo "::set-env name=GIT_USER::${GITHUB_ACTOR}:${GH_TOKEN}"
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}  
+    - name: Release to GitHub Pages
+      env:
+        GIT_USER: git
+      run: |
+        if [ -e yarn.lock ]; then
+        yarn install --frozen-lockfile
+        elif [ -e package-lock.json ]; then
+        npm ci
+        else
+        npm i
+        fi
+        npx docusaurus deploy
