@@ -1,0 +1,14 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" class="iconLeft">
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" class="logo-background-square" height="300" width="300" fill="none"/>
+  <g transform="matrix(10.363162145266756,0,0,10.363162145266756,22.90589685452963,-89.90150175931736) " fill="none">
+   <path id="svg_3" d="m2.614463,13.017408l14,0l0,14l-14,0l0,-14z" fill="#cd0641"/>
+   <path id="svg_4" d="m18.614463,19.017408l0,2l2,0l0,10l-10,0l0,-2l-2,0l0,4l14,0l0,-14l-4,0z" fill="#0062af"/>
+  </g>
+ </g>
+</svg>
