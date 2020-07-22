@@ -126,7 +126,9 @@ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
           <cbc:ID schemeName="Ubigeos"
                   schemeAgencyName="PE:INEI">150101</cbc:ID>
           <!-- Código asignado por la SUNAT para el establecimiento anexo declarado en el RUC, 0000 si no tiene -->
-          <cbc:AddressTypeCode>0000</cbc:AddressTypeCode>
+          <cbc:AddressTypeCode 
+            listName="Establecimientos anexos"
+            listAgencyName="PE:SUNAT">0000</cbc:AddressTypeCode>
           <!-- Urbanización -->
           <cbc:CitySubdivisionName>CASUARINAS</cbc:CitySubdivisionName>
           <!-- Provincia -->
