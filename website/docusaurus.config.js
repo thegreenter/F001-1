@@ -7,6 +7,7 @@ module.exports = {
   organizationName: 'thegreenter',
   projectName: 'F001-1',
   themeConfig: {
+    image: 'img/banner-fe-primer.png',
     navbar: {
       title: 'FE Primer',
       logo: {
