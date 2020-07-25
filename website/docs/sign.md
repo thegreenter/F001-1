@@ -453,3 +453,7 @@ Podemos verificar la firma, y con ello saber si un comprobante ha sido alterado,
 ```sh
 xmlsec verify 20123456789-01-F001-1.xml
 ```
+
+## Comentarios
+
+Esto puede ser un proceso complicado, para ello generalmente ya existen las librerias en cada lenguaje de programación, que ya hacen todo este proceso por defecto, y sin mayor intervención de nuestro lado.
