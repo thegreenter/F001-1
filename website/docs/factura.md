@@ -315,27 +315,3 @@ También puedes encontrar esta lista de catalogos en diferentes formatos [aquí]
 📖 _Colaboración de [@eliutimana](https://github.com/eliutimana/)_
 
 :::
-
-## Validación
-
-Para comprobar que nuestros sean validos, existen 2 tipos de validaciones:
-1. Validación de esquema (UBL 2.1 XSD)
-2. Validación de contenido (Reglas de validación de SUNAT)
-
-### Validación con XSD
-Para verificar que el XML construido cumple con el esquema del estándar UBL, debemos primero contar con los XSD (`XML Schema Definition`), para el caso de SUNAT se puede descargar desde [aquí](https://github.com/thegreenter/ubl-validator/tree/master/src/xsd/2.1), y la verificación la podemos realizar con cualquier herramienta disponible.
-> Para una factura, el XSD a utilizar debe ser: `maindoc/UBL-Invoice-2.1.xsd`.
-
-- [Tutorial validar xml con notepad](https://www.3engine.net/wp/2017/03/validar-un-xml-mediante-notepad/) 
-
-
-### Validación con las reglas de SUNAT
-SUNAT también validará el contenido de nuestra factura, por ejemplo que la serie inicie con `F`, o que algún codigo de catálogo no se encuentre en la lista, aquí también se aplican validaciones de cálculo, como por ejemplo que el IGV este calculado correctamente o la suma de valor venta de los detalles sea igual al de la cabecera.
-
-La forma mas fácil de validar esto es enviarlo al `webservice` de SUNAT, allí nos indicará los errores u observacionse que tengamos en el XML; aunque también se podria realizar utilizando los archivos `XSL` que sunat expone en este [enlace](https://cpe.sunat.gob.pe/sites/default/files/inline-files/XSL%20-%20UBL%202.1.zip), pero esta orientado a utilizar herramiente en el entorno de java.
-
-:::info
-
-Al enviar el XML a SUNAT, este realizará ambas validaciones, utilizando los XSD del `UBL` y las validaciones de contenido.  
-
-:::
