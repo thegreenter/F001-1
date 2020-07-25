@@ -24,7 +24,7 @@ Puedes descargar estas herramientas en este <a href="https://github.com/thegreen
 :::
 
 ## Certificado
-Como vimos en [requerimientos](requirements.md), necesitamos un certificado digital, para este ejemplo puedes descargarlo desde <a href={useBaseUrl('files/certificates.zip')}>aquí</a>.
+Como vimos en [requerimientos](requirements.md), necesitamos un certificado digital, para este ejemplo puedes descargarlo desde <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/certificates.zip" target="_blank">aquí</a>.
 
 ## Canonicalización (c14n)
 
