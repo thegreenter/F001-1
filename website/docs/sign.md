@@ -6,7 +6,7 @@ sidebar_label: Firma Digital
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Una de las partes principales del proceso, es la firma digital utilizando un certificado con finalidad para firmar documentos.
+Una de las partes principales del proceso, es la firma digital utilizando un certificado que debe tener finalidad para firma de documentos.
 
 Para archivos XML esto se conoce como firma envolvente (`enveloped-signature`), donde se firma una cadena de texto dentro del mismo documento XML.
 
