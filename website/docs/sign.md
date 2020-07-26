@@ -30,7 +30,7 @@ Como vimos en [requerimientos](requirements.md), necesitamos un certificado digi
 
 Necesitamos la representacion canónica del XML, esto permite preservar solo el contenido que puede variar en el XML, excluyendo cosas como comentarios o tipos de codificación del archivo.
 
-> Para nuestro caso usaremos la [version c14n 1.0](https://www.w3.org/TR/2001/REC-xml-c14n-20010315)
+> Para este caso usaremos la [version c14n 1.0](https://www.w3.org/TR/2001/REC-xml-c14n-20010315)
 
 Esto seria un resumen de los cosas que se tienen que tener en cuenta para satisfacer `c14n`.
 - Archivos en format `UTF-8`
@@ -49,9 +49,9 @@ nuestro xml de la sección [anterior](factura.md) y con `xmllint` ejecutaremos:
 xmllint --c14n 20123456789-01-F001-1.xml > 20123456789-01-F001-1_c14.xml
 ```
 
-Con ello tendremos nuestro xml canónico, esto seria el contenido de `20123456789-01-F001-1_c14.xml`:
+Con ello tendremos nuestro xml canónico, este seria el resultado.
 
-```xml
+```xml title="./20123456789-01-F001-1_c14.xml"
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
   <ext:UBLExtensions>
     <ext:UBLExtension>
@@ -210,9 +210,7 @@ _[Ver SUNAT - Anexo N. 6](http://www.sunat.gob.pe/legislacion/superin/2018/anexo
 
 En este punto, se realizará la firma utilizando el certificado digital; definiremos el siguiente fragmento de XML `<ds:SignedInfo>`, aquí se define los algoritmos utilizados y además incluye el **Valor Resumen** generado en el paso anterior.
 
-> Archivo: _sign-node.xml_
-
-```xml {9}
+```xml title="./sign-info.xml" {9}
 <ds:SignedInfo xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
   <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></ds:CanonicalizationMethod>
   <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></ds:SignatureMethod>
@@ -228,14 +226,14 @@ En este punto, se realizará la firma utilizando el certificado digital; definir
 
 :::note
 
-**Uri=""** en `<ds:Reference URI="">` indica que se firmará todo el archivo xml y no solo un nodo, y  en `<DigestMethod Algorithm="...">` ubicamos el algoritmo (`sha1`) que se utilizó para generar el valor resumen.
+**Uri=""** en `<ds:Reference URI="">` indica que se firma todo el archivo xml y no solo un nodo, y  en `<DigestMethod Algorithm="...">` ubicamos el algoritmo (`sha1`) que se utilizó para generar el valor resumen.
 
 :::
 
 Ahora utilizando el algoritmo `sha1` que se indica en `<SignatureMethod>`, procedemos a obtener el valor de la firma con `openssl`, codificado en `base64`.
 
 ```sh
-openssl dgst -sha1 -sign private.key sign-node.xml | openssl enc -base64
+openssl dgst -sha1 -sign private.key sign-info.xml | openssl enc -base64
 # output:
 # AsuimaYXwnrBFqftXUCDkh9e8Hkwl9ohB9Nj687rLYRwFzWQWHvg2V6u3YgUZLw6
 # CyHo3wcDm2MIF2V923cjIeniGBIBeer1YnLA8nX1prRPODM+DfFmwZ1rR12jVqcH
@@ -247,9 +245,7 @@ openssl dgst -sha1 -sign private.key sign-node.xml | openssl enc -base64
 
 Después de esto, necesitamos incluir el resultado en el xml original, además incluiremos el certificado (`certificate.cer`), para que terceros pueden verificar la integridad del comprobante electrónico.
 
-> Archivo: _20123456789-01-F001-1.xml_
-
-```xml {18, 21}
+```xml title="./20123456789-01-F001-1.xml" {18, 21}
 <?xml version="1.0" encoding="utf-8"?>
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
   <ext:UBLExtensions>
