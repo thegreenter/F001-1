@@ -8,6 +8,14 @@ module.exports = {
   projectName: 'F001-1',
   themeConfig: {
     image: 'img/banner-fe-primer.png',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+
+      // Should we use the prefers-color-scheme media-query,
+      // using user system preferences, instead of the hardcoded defaultMode
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: 'FE Primer',
       logo: {
