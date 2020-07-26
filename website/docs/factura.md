@@ -2,6 +2,7 @@
 id: factura
 title: Factura Electrónica
 sidebar_label: Factura
+description: Construye tu primera factura electrónica siguiendo el estándar UBL 2.1 - SUNAT.
 ---
 
 En esta sección empezaremos la elaboración de los comprobantes electrónicos (archivos `XML`), 
