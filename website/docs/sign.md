@@ -6,13 +6,13 @@ sidebar_label: Firma Digital
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Una de las partes principales del proceso, es la firma digital utilizando un certificado que debe tener finalidad para firma de documentos.
+Una de las partes principales del proceso, es la firma digital utilizando un certificado, el cual debe tener una finalidad de firma de documentos.
 
 Para archivos XML esto se conoce como firma envolvente (`enveloped-signature`), donde se firma una cadena de texto dentro del mismo documento XML.
 
 ## Herramientas.
 
-Para realizar este procediminto, necesitamos algunas herramientas. . Esto incluye los siguientes ejecutables
+Para realizar este procedimiento, necesitamos algunas herramientas.
 
 - `xmllint`
 - `openssl`
@@ -35,14 +35,14 @@ Necesitamos la representacion canónica del XML, esto permite preservar solo el 
 Esto seria un resumen de los cosas que se tienen que tener en cuenta para satisfacer `c14n`.
 - Archivos en format `UTF-8`
 - Fin de linea `LF`
-- Valores de atributos normalizados (por ejemplo quitar el salto de linae entre atributos).
+- Valores de atributos normalizados (por ejemplo quitar el salto de linea entre atributos).
 - Se elimina `CDATA`, solo se mantiene el contenido.
 - Se elimina la declaracion xml, al incio del documento: `<?xml version="1.0" encoding="utf-8"?>`.
 - Se eliminan los comentarios.
 - Se normalizan los espacios en blancos entre los elementos del documento.
 - Los elementos vacíos se convierten en pares de etiquetas de inicio y fin: `<ab />` seria `<ab></ab>`.
 
-Pero gracias a herramientas existentes podemos hacerlo ejecutando un solo comando; utilizaremos 
+Y gracias a herramientas existentes podemos hacerlo con un solo comando; utilizaremos 
 nuestro xml de la sección [anterior](factura.md) y con `xmllint` ejecutaremos:
 
 ```sh
@@ -228,7 +228,7 @@ En este punto, se realizará la firma utilizando el certificado digital; definir
 
 :::note
 
-**Uri=""** en `<ds:Reference>` indica que se firmará todo el comprobante y no un nodo, y  en `<DigestMethod Algorithm="...">` ubicamos el algoritmo utilizado (`sha1`) para generar el valor resumen.
+**Uri=""** en `<ds:Reference URI="">` indica que se firmará todo el archivo xml y no solo un nodo, y  en `<DigestMethod Algorithm="...">` ubicamos el algoritmo (`sha1`) que se utilizó para generar el valor resumen.
 
 :::
 
@@ -245,7 +245,7 @@ openssl dgst -sha1 -sign private.key sign-node.xml | openssl enc -base64
 # Mo9NSFs/+bHaOR2EjPZrkg==
 ```
 
-Ahora necesitamos incluir este resultado en el xml original, además incluiremos el certificado (`certificate.cer`), para que terceros pueden verificar la integridad del comprobante electrónico.
+Después de esto, necesitamos incluir el resultado en el xml original, además incluiremos el certificado (`certificate.cer`), para que terceros pueden verificar la integridad del comprobante electrónico.
 
 > Archivo: _20123456789-01-F001-1.xml_
 
@@ -448,7 +448,7 @@ Ahora necesitamos incluir este resultado en el xml original, además incluiremos
 
 ## Verificación
 
-Podemos verificar la firma, y con ello saber si un comprobante ha sido alterado, utilizando `xmlsec`, el comando seria el siguiente:
+Podemos verificar la firma digital, y además con ello saber si un comprobante ha sido alterado, para esto podemos utilizar `xmlsec`, el comando seria el siguiente:
 
 ```sh
 xmlsec verify 20123456789-01-F001-1.xml
