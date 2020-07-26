@@ -1,0 +1,21 @@
+{
+    "name": "FE Primer - Facturación Electrónica",
+    "short_name": "FE Primer",
+    "theme_color": "#813e8f",
+    "background_color": "#a555b5",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/?utm_source=homescreen",
+    "icons": [
+      {
+        "src": "img/manifest/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "img/manifest/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }    
+    ]
+  }
