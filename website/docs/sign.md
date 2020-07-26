@@ -2,9 +2,8 @@
 id: sign
 title: Firma Digital
 sidebar_label: Firma Digital
+description: Firma digital de comprobantes electrónicos - SUNAT, una explicación detallada del proceso. 
 ---
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Una de las partes principales del proceso, es la firma digital utilizando un certificado, el cual debe tener una finalidad de firma de documentos.
 
