@@ -91,4 +91,14 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        cacheTime: 600 * 1000,
+        changefreq: 'weekly',
+        priority: 0.5,
+      },
+    ],
+  ]
 };
