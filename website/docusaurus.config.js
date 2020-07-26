@@ -14,7 +14,7 @@ module.exports = {
         alt: 'Sunat FE logo',
         src: 'img/logo.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
