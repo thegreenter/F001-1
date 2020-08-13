@@ -31,7 +31,7 @@ Sigues estos pasos para crear tu certificado digital (solo para pruebas).
 - Instalar `openssl`, puedes encontrarlo [aquí](https://www.openssl.org/source/).
 - Generar la clave privada: `openssl genrsa 2048 > private.key`
 - Generar el certificado autofirmado: `openssl req -x509 -days 3600 -new -key private.key -out certificate.cer`
-- Si lo nesecitas en formato `PFX`, puedes hacerlo con: `openssl pkcs12 -export -in public.cer -inkey private.key -out cert.pfx -passout pass:12345678`, este certificado tendrá como contraseña: `12345678`.
+- Si lo nesecitas en formato `PFX`, puedes hacerlo con: `openssl pkcs12 -export -in certificate.cer -inkey private.key -out cert.pfx -passout pass:12345678`, este certificado tendrá como contraseña: `12345678`.
 
 Finalmente deberias contar con estos archivos.
 ```
