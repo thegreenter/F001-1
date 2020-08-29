@@ -17,3 +17,20 @@ Para completar esta sección necesitaremos utilizar algunas herramientas.
 Tambien necesitaremos un comprobante XML a validar, utilizaremos el XML creado en la sección anterior.
 
 - [20123456789-01-F001-1.xml](https://fe-primer.greenter.dev/docs/sign#resultado)
+
+## Validación de Esquema (XSD)
+
+Para verificar que el XML construido cumple con el esquema del estándar UBL, debemos primero contar con los archivos XSD (`XML Schema Definition`) que describe los elementos que puede contener el comprobante XML, para el caso de SUNAT esto se pueden descargar desde [aquí](https://cpe.sunat.gob.pe/sites/default/files/inline-files/2.1.zip).
+
+Esta será la estructura del directorio de trabajo.
+```
+/
+├── 2.1/
+│   ├─ common/
+│   └─ maindoc/
+│       ├─ ...
+│       └─ UBL-Invoice-2.1.xsd
+│
+├── 20123456789-01-F001-1.xml
+```
+
