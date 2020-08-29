@@ -144,6 +144,13 @@ Esta será la estructura del directorio de trabajo.
 ├── 20123456789-01-F001-1.xml
 ```
 
+:::warning XSLT Patch
+
+Aunque los archivos XSL que SUNAT expone siguen la version [XSLT 1.0](https://www.w3.org/TR/xslt-10/), no es totalmente compatible, para este ejemplo hemos corregido el XSL de factura y los xsl referenciados, puedes descargarlo <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/xsl-validation.zip" target="_blank">aquí</a>.    
+Si necesitas todos los XSL estandarizados puedes [contactarnos](https://web.facebook.com/thegreenter).
+
+:::
+
 ### `xsltproc`
 Esta herramienta nos permitirá validar el comprobante XML, con el archivo XSL según el tipo de comprobante. En este ejemplo validaremos una factura, el archivo xml será `20123456789-01-F001-1.xml` y el archivo XSL, `ValidaExprRegFactura-2.0.1.xsl`.
 
