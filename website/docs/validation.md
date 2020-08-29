@@ -7,7 +7,7 @@ sidebar_label: Validación
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Para comprobar que nuestros comprobantes sean válidos, existen 2 tipos de validaciones:
+Para verificar que nuestros comprobantes sean válidos, existen 2 tipos de validaciones:
 
 1. Validación de esquema (UBL 2.1 - [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)))
 2. Validación de contenido (Reglas de validación de SUNAT - [XSL](https://es.wikipedia.org/wiki/Extensible_Stylesheet_Language))
@@ -119,7 +119,7 @@ _En este caso el atributo `currencyID` es requerido y nos muestra el error._
 
 La validación de contenido de nuestro comprobante XML, proviene de las [Reglas de validación - SUNAT](https://cpe.sunat.gob.pe/node/88#item-1), en la cual se define valores, formatos, cálculos que deberia cumplir el comprobante electrónico, y que en general son propios de la tributación peruana; por ejemplo que la serie inicie con `F` para facturas, el cálculo del IGV sea correcto, que los codigos de catálogo utilizados se encuentren en la lista definida por SUNAT, etc.
 
-Las reglas de validación que SUNAT presenta en un archivo excel, ha sido representada en archivos XSL para poder poder utilizarlos programáticamente, SUNAT la pone a disposición en este [enlace](https://cpe.sunat.gob.pe/node/88#item-3), pero no esta completo; existe otra forma de obtener estos archivos XSL, y es descargando el facturador **SFS** de SUNAT, en la carpeta `sunat_archivos\sfs\VALI\commons`.
+Las reglas de validación que SUNAT presenta en un archivo excel, ha sido representada en archivos XSL para poder utilizarlos programáticamente, SUNAT la pone a disposición en este [enlace](https://cpe.sunat.gob.pe/node/88#item-3), pero no esta completo; existe otra forma de obtener estos archivos XSL, y es descargando el facturador **SFS** de SUNAT, los archivos `XSL` se encontraran en la carpeta `sunat_archivos\sfs\VALI\commons`.
 
 
 Esta será la estructura del directorio de trabajo.
@@ -180,8 +180,7 @@ Resultado:
  error: : errorCode 3088: Valor no se encuentra en el catalogo: 02 (nodo: "Invoice/cbc:DocumentCurrencyCode" valor: "BTC")
 ```
 
-Código `3088`: **El valor ingresado como moneda del comprobante no es valido (catalogo nro 02).**      
-Esto podemos encontrarlo en el archivo [excel de Reglas de validación](https://cpe.sunat.gob.pe/node/88#item-3).
+_Código `3088`: **El valor ingresado como moneda del comprobante no es valido (catalogo nro 02).**_
 
   </TabItem>
   <TabItem value="caso2">
@@ -223,9 +222,10 @@ Resultado:
 4301INFO : errorCode 4301 (nodo: "cac:TaxTotal/cbc:TaxAmount" valor: "5.00")
 ```
 
-Código `4301`: **La sumatoria de impuestos globales no corresponde al monto total de impuestos.**
+_Código `4301`: **La sumatoria de impuestos globales no corresponde al monto total de impuestos._**
 
   </TabItem>
 </Tabs>
 
 
+Todas las validaciones se pueden constatar con en el archivo [excel de Reglas de validación](https://cpe.sunat.gob.pe/node/88#item-3), y allí podremos tener mayor información de cada codigo de error y como resolverlo.
