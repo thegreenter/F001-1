@@ -137,3 +137,16 @@ Esta será la estructura del directorio de trabajo.
 │
 ├── 20123456789-01-F001-1.xml
 ```
+
+### `xsltproc`
+Esta herramienta nos permitirá validar el comprobante XML, con el archivo XSL según el tipo de comprobante. En este ejemplo validaremos una factura, el archivo xml será `20123456789-01-F001-1.xml` y el archivo XSL, `ValidaExprRegFactura-2.0.1.xsl`.
+
+Comando para validar el comprobante XML usando las reglas de validación SUNAT.
+```bash
+xsltproc --noout --stringparam nombreArchivoEnviado 20123456789-01-F001-1.xml sunat_archivos/sfs/VALI/commons/xsl/validation/2.X/ValidaExprRegFactura-2.0.1.xsl 20123456789-01-F001-1.xml
+```
+
+Parámetros:
+- `--noout`: Solo muestra los errores.
+- `--stringparam`: Parámetros utilizados en el archivo XSL, SUNAT requiere el parámetro `nombreArchivoEnviado` que es el nombre del comprobante xml. 
+
