@@ -23,7 +23,7 @@ Tambien necesitaremos un comprobante XML a validar, utilizaremos el XML creado e
 
 :::tip Windows
 
-Puedes descargar estas herramientas desde este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
+Puedes descargar las herramientas desde este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
 
 :::
 
@@ -48,7 +48,7 @@ Esta herramienta nos permitirá validar el comprobante XML, con el esquema XSD r
 
 Comando para validar el comprobante XML con su esquema XSD.
 ```bash
-xmllint --schema ./ 2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
+xmllint --schema ./2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
 ```
 Resultado:
 ```bash
@@ -83,7 +83,7 @@ Eliminaremos el nodo `cbc:PriceAmount` (Valor venta unitario).
 Volvemos a ejecutar la validación
 
 ```bash
-xmllint --schema ./ 2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
+xmllint --schema ./2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
 ```
 Resultado:
 ```bash
@@ -108,7 +108,7 @@ Eliminaremos el atributo `currencyID` (Moneda) en el nodo `cbc:PayableAmount` (I
 Volvemos a ejecutar la validación
 
 ```bash
-xmllint --schema ./ 2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
+xmllint --schema ./2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
 ```
 Resultado:
 ```bash
