@@ -34,3 +34,18 @@ Esta será la estructura del directorio de trabajo.
 ├── 20123456789-01-F001-1.xml
 ```
 
+### `xmllint`
+Esta herramienta nos permitirá validar el comprobante XML, con el esquema XSD relacionado. En este caso validaremos una factura, el archivo xml sera `20123456789-01-F001-1.xml` y el esquema XSD, `UBL-Invoice-2.1.xsd`.
+
+Comando para validar el comprobante XML con su esquema XSD.
+```bash
+xmllint --schema ./ 2.1/maindoc/UBL-Invoice-2.1.xsd 20123456789-01-F001-1.xml --noout
+```
+Resultado:
+```bash
+20123456789-01-F001-1.xml validates
+```
+
+Parámetros:
+- `--schema`: Indica la ruta del archivo XSD. 
+- `--noout`: Solo muestra los errores encontrados.
