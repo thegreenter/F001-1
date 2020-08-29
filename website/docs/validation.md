@@ -11,11 +11,9 @@ Para comprobar que nuestros comprobantes sean válidos, existen 2 tipos de valid
 
 ## Herramientas
 Para completar esta sección necesitaremos utilizar algunas herramientas.
-- `xmllint`
-- `xsltproc`
+- [`xmllint`](http://xmlsoft.org/xmllint.html)
+- [`xsltproc`](http://xmlsoft.org/XSLT/xsltproc.html)
 
 Tambien necesitaremos un comprobante XML a validar, utilizaremos el XML creado en la sección anterior.
 
 - [20123456789-01-F001-1.xml](https://fe-primer.greenter.dev/docs/sign#resultado)
-
-
