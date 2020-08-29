@@ -21,6 +21,12 @@ Tambien necesitaremos un comprobante XML a validar, utilizaremos el XML creado e
 
 - [20123456789-01-F001-1.xml](https://fe-primer.greenter.dev/docs/sign#resultado)
 
+:::tip Windows
+
+Puedes descargar estas herramientas desde este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
+
+:::
+
 ## Validación de Esquema (XSD)
 
 Para verificar que el XML construido cumple con el esquema del estándar UBL, debemos primero contar con los archivos XSD (`XML Schema Definition`) que describe los elementos que puede contener el comprobante XML, para el caso de SUNAT esto se pueden descargar desde [aquí](https://cpe.sunat.gob.pe/sites/default/files/inline-files/2.1.zip).

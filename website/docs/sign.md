@@ -18,7 +18,7 @@ Para realizar este procedimiento, necesitamos algunas herramientas.
 
 :::tip Windows
 
-Puedes descargar estas herramientas en este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
+Puedes descargar estas herramientas desde este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
 
 :::
 
