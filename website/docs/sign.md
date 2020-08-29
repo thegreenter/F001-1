@@ -18,7 +18,7 @@ Para realizar este procedimiento, necesitamos algunas herramientas.
 
 :::tip Windows
 
-Puedes descargar estas herramientas en este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
+Puedes descargar estas herramientas desde este <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/tools.zip" target="_blank">enlace</a>.
 
 :::
 
@@ -242,7 +242,11 @@ openssl dgst -sha1 -sign private.key sign-info.xml | openssl enc -base64
 # Mo9NSFs/+bHaOR2EjPZrkg==
 ```
 
-Después de esto, necesitamos incluir el resultado en el xml original, además incluiremos el certificado (`certificate.cer`), para que terceros pueden verificar la integridad del comprobante electrónico.
+Después de esto, necesitamos incluir el resultado en el xml original, además incluiremos el certificado (`certificate.cer`) en el nodo `<ds:X509Certificate>`, para que terceros pueden verificar la autenticidad del comprobante electrónico.
+
+## Resultado
+
+Este sería el resultado de nuestro comprobante electrónico firmado digitalmente.
 
 ```xml title="./20123456789-01-F001-1.xml" {18, 21}
 <?xml version="1.0" encoding="utf-8"?>
