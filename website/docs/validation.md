@@ -150,3 +150,82 @@ Parámetros:
 - `--noout`: Solo muestra los errores.
 - `--stringparam`: Parámetros utilizados en el archivo XSL, SUNAT requiere el parámetro `nombreArchivoEnviado` que es el nombre del comprobante xml. 
 
+### Errores
+El comprobante XML utilizado no contiene errores, haremos algunos cambios en el XML para conseguirlo.
+
+<Tabs
+  defaultValue="caso1"
+  values={[
+    {label: 'Moneda inválida', value: 'caso1'},
+    {label: 'Total impuestos incorrecto', value: 'caso2'},
+  ]}>
+  <TabItem value="caso1">
+
+La moneda utilizada era `PEN`, la cambiaremos por `BTC`.
+
+```xml {4}
+ <cbc:DocumentCurrencyCode
+        listID="ISO 4217 Alpha"
+        listName="Currency"
+        listAgencyName="United Nations Economic Commission for Europe">BTC</cbc:DocumentCurrencyCode>
+```
+
+Ejecutar la validación.
+```bash
+xsltproc --noout --stringparam nombreArchivoEnviado 20123456789-01-F001-1.xml sunat_archivos/sfs/VALI/commons/xsl/validation/2.X/ValidaExprRegFactura-2.0.1.xsl 20123456789-01-F001-1.xml
+```
+
+Resultado:
+```bash
+ error: : errorCode 3088: Valor no se encuentra en el catalogo: 02 (nodo: "Invoice/cbc:DocumentCurrencyCode" valor: "BTC")
+```
+
+Código `3088`: **El valor ingresado como moneda del comprobante no es valido (catalogo nro 02).**      
+Esto podemos encontrarlo en el archivo [excel de Reglas de validación](https://cpe.sunat.gob.pe/node/88#item-3).
+
+  </TabItem>
+  <TabItem value="caso2">
+
+La suma total de impuestos era `18.00`, la cambiaremos por `5.00`.
+
+```xml {2}
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="PEN">5.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="PEN">100.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="PEN">18.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cac:TaxScheme>
+          <cbc:ID
+                schemeName="Codigo de tributos"
+                schemeAgencyName="PE:SUNAT"
+                schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05">1000</cbc:ID>
+          <cbc:Name>IGV</cbc:Name>
+          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="PEN">100.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveAmount currencyID="PEN">118.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="PEN">118.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+```
+
+Ejecutar la validación.
+```bash
+xsltproc --noout --stringparam nombreArchivoEnviado 20123456789-01-F001-1.xml sunat_archivos/sfs/VALI/commons/xsl/validation/2.X/ValidaExprRegFactura-2.0.1.xsl 20123456789-01-F001-1.xml
+```
+
+Resultado:
+```bash
+4301INFO : errorCode 4301 (nodo: "cac:TaxTotal/cbc:TaxAmount" valor: "5.00")
+```
+
+Código `4301`: **La sumatoria de impuestos globales no corresponde al monto total de impuestos.**
+
+  </TabItem>
+</Tabs>
+
+
