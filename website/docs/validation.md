@@ -115,3 +115,25 @@ _En este caso el atributo `currencyID` es requerido y nos muestra el error._
 </Tabs>
 
 
+## Validación de contenido (XSL)
+
+La validación de contenido de nuestro comprobante XML, proviene de las [Reglas de validación - SUNAT](https://cpe.sunat.gob.pe/node/88#item-1), en la cual se define valores, formatos, cálculos que deberia cumplir el comprobante electrónico, y que en general son propios de la tributación peruana; por ejemplo que la serie inicie con `F` para facturas, el cálculo del IGV sea correcto, que los codigos de catálogo utilizados se encuentren en la lista definida por SUNAT, etc.
+
+Las reglas de validación que SUNAT presenta en un archivo excel, ha sido representada en archivos XSL para poder poder utilizarlos programáticamente, SUNAT la pone a disposición en este [enlace](https://cpe.sunat.gob.pe/node/88#item-3), pero no esta completo; existe otra forma de obtener estos archivos XSL, y es descargando el facturador **SFS** de SUNAT, en la carpeta `sunat_archivos\sfs\VALI\commons`.
+
+
+Esta será la estructura del directorio de trabajo.
+```
+/
+├── sunat_archivos/sfs/VALI/commons/
+│       ├─ cpe/
+│       │   └─ catalogo/
+│       ├─ error/
+│       │   ├─ error_utils.xsl
+│       │   └─ validate_utils.xsl
+│       └─ xsl/validation/2.X/
+│           ├─ ...
+│           └─ ValidaExprRegFactura-2.0.1.xsl
+│
+├── 20123456789-01-F001-1.xml
+```
