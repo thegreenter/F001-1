@@ -14,3 +14,8 @@ Para completar esta sección necesitaremos utilizar algunas herramientas.
 - `xmllint`
 - `xsltproc`
 
+Tambien necesitaremos un comprobante XML a validar, utilizaremos el XML creado en la sección anterior.
+
+- [20123456789-01-F001-1.xml](https://fe-primer.greenter.dev/docs/sign#resultado)
+
+
