@@ -10,12 +10,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  --ifm-hero-text-color: #fff;
-}
-
-.getStarted {
-  --ifm-button-background-color: #fff;
-  --ifm-font-color-base: var(--ifm-color-gray-900);
 }
 
 @media screen and (max-width: 966px) {
@@ -40,4 +34,13 @@
 .featureImage {
   height: 200px;
   width: 200px;
+}
+
+.heroImg {
+  height: 200px;
+  margin: 10px 0;
+}
+
+.heroTitle {
+  border-bottom: 4px solid #cd0641;
 }
