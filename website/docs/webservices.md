@@ -144,3 +144,39 @@ zip 20123456789-01-F001-1.zip 20123456789-01-F001-1.xml
 ```
 
 > El nombre del archivo `zip` es el mismo que el nombre del `xml`.
+
+## Ejemplo
+
+En este ejemplo, enviaremos la factura electrónica construida en las secciones anteriores.
+
+> Debemos tener nuestro comprobante en formato zip: `20123456789-01-F001-1.zip`
+
+### sendBill
+
+Para enviar el zip en la trama SOAP, necesitamos codificar el archivo en formato `base64`.
+
+Podemos usar el siguiente comando:
+```bash
+base64 20123456789-01-F001-1.zip
+``` 
+
+En la siguiente trama reemplazar el resultado en la marca `ZIP_BASE_64`, además estamos incluyendo el nombre del archivo y la cabecera de seguridad donde se incluye las credenciales (clave SOL).
+
+```xml title="./sendbill.xml" {13}
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://service.sunat.gob.pe" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+   <SOAP-ENV:Header>
+      <ns2:Security>
+         <ns2:UsernameToken>
+            <ns2:Username>20123456789MODDATOS</ns2:Username>
+            <o:Password xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">moddatos</o:Password>
+         </ns2:UsernameToken>
+      </ns2:Security>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <ns1:sendBill>
+        <fileName>20123456789-01-F001-1.zip</fileName>
+        <contentFile>ZIP_BASE_64</contentFile>
+      </ns1:sendBill>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
