@@ -75,11 +75,7 @@ El servicio solo esta disponible en produción.
 | Consulta CDR           | https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl  |
 
 
-## Envío de Factura
-
-En este ejemplo, enviaremos la factura electrónica construida en los ejemplos anteriores.
-
-### Nomenclatura
+## Nomenclatura
 
 SUNAT exige que el nombre del archivo XML siga un formato específico. 
 
@@ -100,4 +96,26 @@ Ejemplos:
 - `20123456789-07-B001-9.xml` (Nota de crédito relacionada a Boleta)
 - `20123456789-09-T001-1.xml` (Guía de Remisión)
 - `20123456789-40-P001-2.xml` (Percepcion)
+
+Adicionalmente, hay una diferencia con respecto al resumen diario, comunicaciones de baja y resumen de reversiones, que siguen 
+el siguiente formato.
+
+```
+{RUC}-{TIPO}-{FECHA}-{CORRELATIVO}.xml
+```
+| Sigla        | Descripción                |
+|--------------|----------------------------|
+|`RUC`         | Ruc del emisor             |
+|`TIPO_DOC`    | Tipo documento (`RC`: Resumen diario, `RA`: C. de baja, `RR`: Reversiones ) |
+|`SERIE`       | Fecha generación del documento (formato: `YYYYMMDD`) |
+|`CORRELATIVO` | Correlativo del documento (máximo longitud: `5`)  |
+
+Ejemplos:
+- `20123456789-RC-20200930-211.xml` (Resumen diario de boletas)
+- `20123456789-RA-20200929-433.xml` (Comunicación de bajas)
+- `20123456789-RR-20201001-111.xml` (Resumen de reversiones)
+
+## Envío de Factura
+
+En este ejemplo, enviaremos la factura electrónica construida en los ejemplos anteriores.
 
