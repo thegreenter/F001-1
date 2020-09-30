@@ -18,14 +18,14 @@ Este es el principal servicio SOAP, el cual define 3 metodos:
 - `sendSummary`: Para enviar resumen diario, comuncaiones de baja, reversiones.
 - `getStatus`: Consultar el estado del envio de un resumen diario, c. de baja, reversiones.
 
-Para ver el detalle de los métodos, puedes revisar el [Manual del Programdor - SUNAT](http://contenido.app.sunat.gob.pe/insc/ComprobantesDePago+Electronicos/eFacturas+d+sistemas+contrib/Act23dic2014/Manual+de+autorizacion.pdf)
+Para ver el detalle de los métodos, puedes revisar el [Manual del Programador - SUNAT](http://contenido.app.sunat.gob.pe/insc/ComprobantesDePago+Electronicos/eFacturas+d+sistemas+contrib/Act23dic2014/Manual+de+autorizacion.pdf)
 
 
 Existen 3 endpoint del mismo servicio para diferentes comprobantes.
 
-- Facturas, Boletas, notas de crédito, débito, Resumen diario de boletas, Comunicacion de bajas
-- Retención, Percepción, Resumen de Reversiones
-- Guia de Remisión
+1. Facturas, Boletas, notas de crédito, débito, Resumen diario de boletas, Comunicacion de bajas
+2. Retención, Percepción, Resumen de Reversiones
+3. Guia de Remisión
 
 ### Endpoints
 
@@ -33,11 +33,10 @@ SUNAT dispone de servicios para prueba (**BETA**) y envío a producción:
 
 
 <Tabs
-  defaultValue="apple"
+  defaultValue="beta"
   values={[
     {label: 'BETA', value: 'beta'},
-    {label: 'Produción', value: 'prod'},
-    {label: 'Banana', value: 'banana'},
+    {label: 'Produción', value: 'prod'}
   ]}>
   <TabItem value="beta">
 
@@ -57,16 +56,17 @@ SUNAT dispone de servicios para prueba (**BETA**) y envío a producción:
 | Guia                   | https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService?wsdl   |
 
   </TabItem>
-</Tabs>;
+</Tabs>
 
 
 ## BillConsultService
 
-Este servicio se utiliza para consultar el estado de comprobantes previamente enviados y obtener el `CDR`, tener en cuenta que solo esta habilitado para Facturas y notas de crédito, débito releacionadas.
+Este servicio se utiliza para consultar el estado de comprobantes previamente enviados y obtener el `CDR`, tener en cuenta que solo esta habilitado para facturas y notas de crédito, débito releacionadas.
 
 El servicio solo esta disponible en produción.
 
 | Servicio               | Ruta                                                                            |
 |------------------------|---------------------------------------------------------------------------------|
 | Consulta CDR           | https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl       |
+
 
