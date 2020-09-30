@@ -10,6 +10,18 @@ import TabItem from '@theme/TabItem';
 
 Después de generar el comprobante electrónico (XML), necesitamos informarlo a SUNAT. Para ello disponemos de algunos servicios SOAP a los que necesitamos conectarnos para enviar nuestros archivos. 
 
+## Credenciales
+
+Para conectarnos a los servicios SOAP de SUNAT, necesitaremos unas credenciales, estas son la misma que la clave SOL.
+
+|Dato          | Relación con clave SOL |
+|--------------|------------------------|
+| Usuario SOAP | `RUC + Usuario SOL`    |
+| Clave SOAP   | `clave SOL`            |
+
+Ejemplo:
+- Usuario: `20123456789MODDATOS`
+- Clave: `moddatos`
 
 ## BillService
 Este es el principal servicio SOAP, el cual define 3 metodos:
@@ -125,6 +137,9 @@ zip 20123456789-01-F001-1.zip 20123456789-01-F001-1.xml
 
 > El nombre del archivo `zip` es el mismo que el nombre del `xml`.
 
-## Envío de Factura
+## Ejemplo
 
-En este ejemplo, enviaremos la factura electrónica construida en los ejemplos anteriores.
+En este ejemplo, enviaremos la factura electrónica construida en las secciones anteriores.
+
+1. Debemos tener nuestro comprobante en formato zip: `20123456789-01-F001-1.zip`
+
