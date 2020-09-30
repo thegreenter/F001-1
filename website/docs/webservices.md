@@ -75,3 +75,29 @@ El servicio solo esta disponible en produción.
 |------------------------|---------------------------------------------------------------------------------|
 | Consulta CDR           | https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl       |
 
+
+## Envío de Factura
+
+En este ejemplo, enviaremos la factura electrónica construida en los ejemplos anteriores.
+
+### Nomenclatura
+
+SUNAT exige que el nombre del archivo XML siga un formato específico. 
+
+```
+{RUC}-{TIPO_DOC}-{SERIE}-{CORRELATIVO}.xml
+```
+| Sigla          | Descripción                       |
+|----------------|-----------------------------------|
+|`RUC`         | Ruc del emisor                    |
+|`TIPO_DOC`    | Tipo de Comprobante (Catálogo 01) |
+|`SERIE`       | Serie del comprobante             |
+|`CORRELATIVO` | Correlativo del comprobante       |
+
+Ejemplos:
+- `20123456789-01-F001-4.xml` (Factura)
+- `20123456789-07-F001-5.xml` (Nota de crédito relacionada a Factura)
+- `20123456789-03-B001-8.xml` (Boleta)
+- `20123456789-07-B001-9.xml` (Nota de crédito relacionada a Boleta)
+- `20123456789-09-T001-1.xml` (Guía de Remisión)
+- `20123456789-40-P001-2.xml` (Percepcion)
