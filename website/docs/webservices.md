@@ -23,6 +23,14 @@ Ejemplo:
 - Usuario: `20123456789MODDATOS`
 - Clave: `moddatos`
 
+:::tip Usuario Secundario
+
+Es recomendable crear un usuario secundario con solo permisos para procesos de facturación electrónica, y evitar utilizar la clave SOL principal. Puedes encontrar muchos tutoriales en 
+internet, pero recuerda que para que el usuario este operativo puede tomar hasta 24 horas despues de su creación. 
+
+:::
+
+
 ## BillService
 Este es el principal servicio SOAP, el cual define 3 metodos:
 
