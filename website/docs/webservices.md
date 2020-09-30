@@ -7,6 +7,7 @@ description: Envío de comprobantes a los servicios SOAP de SUNAT.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Para informar nuestros comprobantes electrónicos (XML) emitidos a SUNAT, disponemos de algunos servicios SOAP a los que necesitamos conectarnos para enviar estos archivos. 
 
@@ -147,7 +148,7 @@ zip 20123456789-01-F001-1.zip 20123456789-01-F001-1.xml
 
 ## Ejemplo
 
-En este ejemplo, enviaremos la factura electrónica construida en las secciones anteriores.
+En este ejemplo, enviaremos la factura electrónica construida en las secciones anteriores, puedes descargarlo desde este <a href={useBaseUrl('file/20123456789-01-F001-1.xml')} target="'_blank'">enlace</a>.
 
 > Debemos tener nuestro comprobante en formato zip: `20123456789-01-F001-1.zip`
 
