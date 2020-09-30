@@ -1,6 +1,6 @@
 module.exports = {
   title: 'FE Primer',
-  tagline: 'Facturación Electrónica en Perú 🌐 SUNAT',
+  tagline: 'Guía de Facturación Electrónica en Perú SUNAT',
   url: 'https://fe-primer.greenter.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
