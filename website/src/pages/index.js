@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -61,19 +62,28 @@ function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="Guia de inicio para implementar la facturación electrónica en Perú - SUNAT.">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/')}>
-              Empezar
-            </Link>
+          <div className="row">
+            <div className={classnames('col col--5 col--offset-1')}>
+              <h1 className="hero__title">
+                <span className={clsx(styles.heroTitle)}>FE</span> Primer
+              </h1>
+              <p className="hero__subtitle">{siteConfig.tagline}</p>
+              <div className={styles.buttons}>
+                <Link
+                  className={clsx(
+                    'button button--outline button--secondary button--lg',
+                    styles.getStarted,
+                  )}
+                  to={useBaseUrl('docs/')}>
+                  Empezar
+                </Link>
+              </div>
+            </div>
+            <div className={classnames('col col--5')}>
+              <img className={styles.heroImg} src="img/files-find.svg" />
+            </div>
           </div>
         </div>
       </header>
