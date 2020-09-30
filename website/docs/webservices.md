@@ -31,7 +31,6 @@ Existen 3 endpoint del mismo servicio para diferentes comprobantes.
 
 SUNAT dispone de servicios para prueba (**BETA**) y envío a producción:
 
-
 <Tabs
   defaultValue="beta"
   values={[
@@ -71,9 +70,9 @@ Métodos SOAP:
 
 El servicio solo esta disponible en produción.
 
-| Servicio               | Ruta                                                                            |
-|------------------------|---------------------------------------------------------------------------------|
-| Consulta CDR           | https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl       |
+| Servicio               | Ruta                                                                       |
+|------------------------|----------------------------------------------------------------------------|
+| Consulta CDR           | https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl  |
 
 
 ## Envío de Factura
@@ -87,8 +86,8 @@ SUNAT exige que el nombre del archivo XML siga un formato específico.
 ```
 {RUC}-{TIPO_DOC}-{SERIE}-{CORRELATIVO}.xml
 ```
-| Sigla          | Descripción                       |
-|----------------|-----------------------------------|
+| Sigla        | Descripción                       |
+|--------------|-----------------------------------|
 |`RUC`         | Ruc del emisor                    |
 |`TIPO_DOC`    | Tipo de Comprobante (Catálogo 01) |
 |`SERIE`       | Serie del comprobante             |
@@ -101,3 +100,4 @@ Ejemplos:
 - `20123456789-07-B001-9.xml` (Nota de crédito relacionada a Boleta)
 - `20123456789-09-T001-1.xml` (Guía de Remisión)
 - `20123456789-40-P001-2.xml` (Percepcion)
+
