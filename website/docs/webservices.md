@@ -63,10 +63,15 @@ SUNAT dispone de servicios para prueba (**BETA**) y envío a producción:
 
 Este servicio se utiliza para consultar el estado de comprobantes previamente enviados y obtener el `CDR`, tener en cuenta que solo esta habilitado para facturas y notas de crédito, débito releacionadas.
 
+Métodos SOAP:
+
+- `getStatusCdr`: Para obtener el CDR, si el comprobante fue previamente procesado.
+
+### Endpoints
+
 El servicio solo esta disponible en produción.
 
 | Servicio               | Ruta                                                                            |
 |------------------------|---------------------------------------------------------------------------------|
 | Consulta CDR           | https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl       |
-
 
