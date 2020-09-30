@@ -114,8 +114,8 @@ Ejemplos:
 - `20123456789-07-F001-5.xml` (Nota de crédito relacionada a Factura)
 - `20123456789-03-B001-8.xml` (Boleta)
 - `20123456789-07-B001-9.xml` (Nota de crédito relacionada a Boleta)
-- `20123456789-09-T001-1.xml` (Guía de Remisión)
-- `20123456789-40-P001-2.xml` (Percepcion)
+- `20123456789-09-T001-155.xml` (Guía de Remisión)
+- `20123456789-40-P001-222.xml` (Percepcion)
 
 Adicionalmente, hay una diferencia con respecto al resumen diario, comunicaciones de baja y resumen de reversiones, que siguen 
 el siguiente formato.
@@ -133,7 +133,7 @@ el siguiente formato.
 Ejemplos:
 - `20123456789-RC-20200930-211.xml` (Resumen diario de boletas)
 - `20123456789-RA-20200929-433.xml` (Comunicación de bajas)
-- `20123456789-RR-20201001-111.xml` (Resumen de reversiones)
+- `20123456789-RR-20201001-11122.xml` (Resumen de reversiones)
 
 ## Zip
 
@@ -144,10 +144,3 @@ zip 20123456789-01-F001-1.zip 20123456789-01-F001-1.xml
 ```
 
 > El nombre del archivo `zip` es el mismo que el nombre del `xml`.
-
-## Ejemplo
-
-En este ejemplo, enviaremos la factura electrónica construida en las secciones anteriores.
-
-1. Debemos tener nuestro comprobante en formato zip: `20123456789-01-F001-1.zip`
-
