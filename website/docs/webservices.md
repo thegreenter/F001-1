@@ -115,7 +115,16 @@ Ejemplos:
 - `20123456789-RA-20200929-433.xml` (Comunicación de bajas)
 - `20123456789-RR-20201001-111.xml` (Resumen de reversiones)
 
+## Zip
+
+Antes de ejecutar el servicio SOAP, SUNAT necesita que el archivo xml (factura) sea comprimido en formato `zip`. Para ello podemos utlizar cualquier programa de escritorio (7z, winrar, etc) o en linea de comandos, como el siguiente ejemplo.
+
+```bash
+zip 20123456789-01-F001-1.zip 20123456789-01-F001-1.xml
+```
+
+> El nombre del archivo `zip` es el mismo que el nombre del `xml`.
+
 ## Envío de Factura
 
 En este ejemplo, enviaremos la factura electrónica construida en los ejemplos anteriores.
-
