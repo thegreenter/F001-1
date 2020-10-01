@@ -8,7 +8,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Guias',
-      items: ['requirements', 'factura', 'sign', 'validation', 'webservices'],
+      items: ['requirements', 'factura', 'sign', 'validation', 'webservices', "baja", "resumen_diario"],
     },
     {
       type: 'category',
