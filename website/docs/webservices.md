@@ -85,6 +85,7 @@ Este servicio se utiliza para consultar el estado de comprobantes previamente en
 
 Métodos SOAP:
 
+- `getStatus`: Consultar el estado de un comprobante previamente enviado.
 - `getStatusCdr`: Para obtener el CDR, si el comprobante fue previamente procesado.
 
 ### Endpoints
