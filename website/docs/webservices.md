@@ -164,7 +164,7 @@ base64 20123456789-01-F001-1.zip
 
 En la siguiente trama reemplazar el resultado en la marca `ZIP_BASE_64`, además estamos incluyendo el nombre del archivo y la cabecera de seguridad donde se incluye las credenciales (clave SOL).
 
-```xml title="./sendbill.xml" {13}
+```xml title="./trama.xml" {13}
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://service.sunat.gob.pe" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
    <SOAP-ENV:Header>
       <ns2:Security>
