@@ -130,7 +130,7 @@ el siguiente formato.
 |`RUC`         | Ruc del emisor             |
 |`TIPO_DOC`    | Tipo documento (`RC`: Resumen diario, `RA`: C. de baja, `RR`: Reversiones ) |
 |`SERIE`       | Fecha generación del documento (formato: `YYYYMMDD`) |
-|`CORRELATIVO` | Correlativo del documento (máximo longitud: `5`)  |
+|`CORRELATIVO` | Correlativo del documento (máxima longitud: `5`)  |
 
 Ejemplos:
 - `20123456789-RC-20200930-211.xml` (Resumen diario de boletas)
