@@ -8,7 +8,7 @@ Para comunicar la emisión de boletas y notas de crédito/débito relacionadas, 
 
 :::note Boleta Invididual
 
-Según la normativa xxx, es posible comunicar a SUNAT boletas electrónicas de forma individual, de las misma forma que se envían las facturas.
+Según la resolución [N.° 114 -2019/SUNAT Art. 12](http://www.sunat.gob.pe/legislacion/superin/2019/114-2019.pdf), es posible comunicar a SUNAT boletas electrónicas de forma individual, de las misma forma que se envían las facturas.
 
 :::
 
@@ -262,3 +262,105 @@ Estado | 1 | 1 | 3
     </sac:SummaryDocumentsLine>
 </SummaryDocuments>
 ```
+
+### Firma
+
+Seguiremos la guía de la sección [firma](sign.md), el resultado del documento firmado se puede descargar <a href={useBaseUrl('file/20123456789-RC-20201022-33221.xml')} target="'_blank'">aquí</a>.
+
+### Envio a SUNAT.
+
+Primero definiremos la nomenclatura de este documento, tendremos en cuenta la referencia de la seccion anterior de [webservices](webservices.md#Nomenclatura). 
+
+`{RUC}-RC-{FECHA}-{CORRELATIVO}.xml`
+
+| Sigla        | Descripción                |
+|--------------|----------------------------|
+|`RUC`         | Ruc del emisor             |
+|`FECHA`       | Fecha generación del resumen (formato: `YYYYMMDD`) |
+|`CORRELATIVO` | Correlativo del documento (máxima longitud: `5`)  |
+
+El proceso de comunicar a SUNAT es un proceso asíncrono, eso quiere decir que no obtendremos la respuesta de SUNAT en la petición inicial sino que tendremos que hacer una segunda petición para saber el resultado.
+Los métodos `SOAP` a utilizar son:
+
+- `sendSummary`: Envío del resumen diario.
+- `getStatus`: Obtener el resultado del resumen diario.
+
+Realizaremos la compresión del archivo xml, con nombre: `20123456789-RC-20201022-33221.zip`, y
+a continuación la incluiremos en la trama SOAP, similar al envío de factura.
+
+```xml title="./trama.xml" {11,13,14}
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://service.sunat.gob.pe" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+   <SOAP-ENV:Header>
+      <ns2:Security>
+         <ns2:UsernameToken>
+            <ns2:Username>20123456789MODDATOS</ns2:Username>
+            <o:Password xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">moddatos</o:Password>
+         </ns2:UsernameToken>
+      </ns2:Security>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <ns1:sendSummary>
+        <fileName>20123456789-RC-20201022-33221.zip</fileName>
+        <contentFile>ZIP_BASE_64</contentFile>
+      </ns1:sendSummary>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+
+Ahora invocaremos el servicio SOAP utilizando `curl`.
+
+```bash
+curl -X POST -H "Content-Type: text/xml" --data-binary @trama.xml \
+ https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+    <soap-env:Header/>
+    <soap-env:Body>
+        <br:sendSummaryResponse xmlns:br="http://service.sunat.gob.pe">
+            <ticket>1603506008386</ticket>
+        </br:sendSummaryResponse>
+    </soap-env:Body>
+</soap-env:Envelope>
+```
+
+
+Invocando el servicio SOAP.
+```bash
+curl -X POST -H "Content-Type: text/xml" --data-binary @status.xml \
+ https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService
+```
+
+El resultado será el siguiente.
+
+```xml {6}
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns2:getStatusResponse xmlns:ns2="http://service.sunat.gob.pe">
+            <status>
+                <content>ZIP_BASE64_RESPONSE</content>
+                <statusCode>0</statusCode>
+            </status>
+        </ns2:getStatusResponse>
+    </S:Body>
+</S:Envelope>
+```
+
+Referencia sobre `statusCode`:
+
+statusCode | Descripcion
+-|-|
+0| Proceso correctamente, el campo `content` contendrá el resultado
+98| En proceso, necesitas volver a consultar
+99| Proceso con errores, el campo `content` contendrá el resultado
+
+Guardamos el valor de la marca `ZIP_BASE64_RESPONSE` en un archivo `response.txt`, para proceder a decodificarlo y obtener el ZIP que contiene la respuesta.
+
+```bash
+base64 -d response.txt > result.zip
+```
+
+En `result.zip` ubicaremos el XML del CDR donde nos indicar que el documento fue aceptado. Más informacion sobre CDR en la sección de [webservices](webservices.md#CDR).
