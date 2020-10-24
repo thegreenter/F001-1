@@ -20,7 +20,7 @@ Los tipos de comprobantes principales que pueden darse de baja utilizando este d
 Tipo  | Descripción
 -|-|
 01| Facturas
-07| Nota de creéito relacionada a facturas
+07| Nota de crédito relacionada a facturas
 08| Nota de débito relacionada a facturas
 
 :::warning Baja de Boletas
