@@ -25,7 +25,7 @@ Tipo  | Descripción
 
 :::warning Baja de Boletas
 
-Las boletas y notas de crédito/débito relacionadas deben darse de baja utilizando el documento de resumen diario.
+Las boletas y notas de crédito/débito relacionadas deben darse de baja utilizando el documento de [resumen diario](resumen-diario.md).
 
 :::
 
