@@ -188,6 +188,12 @@ Con ello tendremos nuestro xml canónico, este seria el resultado.
 </Invoice>
 ```
 
+:::tip EOL
+
+Para evitar valorese distinso, siempre guardar los archivos con fin de linea `LF`.
+
+:::
+
 ## Valor Resumen
 
 Es el hash generado a partir del contenido de nuestro XML canónico (`c14n`), utilizaremos el algoritmo `sha1`, y para obtener este resultado ejecutaremos con `openssl`:
