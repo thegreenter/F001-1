@@ -4,6 +4,8 @@ title: Resumen diario de Boletas
 sidebar_label: Resumen diario
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Para comunicar la emisión de boletas y notas de crédito/débito relacionadas, SUNAT a definido un esquema XML nombrado como Resumen diario de Boletas `SummaryDocuments`. En este documento se pueden informar varios comprobantes siempre que hayan sido emitidos en el mismo día.
 
 :::note Boleta Invididual
@@ -288,7 +290,7 @@ Los métodos `SOAP` a utilizar son:
 Realizaremos la compresión del archivo xml, con nombre: `20123456789-RC-20201022-33221.zip`, y
 a continuación la incluiremos en la trama SOAP, similar al envío de factura.
 
-```xml title="./trama.xml" {11,13,14}
+```xml title="./trama.xml" {11-14}
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://service.sunat.gob.pe" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
    <SOAP-ENV:Header>
       <ns2:Security>
@@ -335,7 +337,7 @@ curl -X POST -H "Content-Type: text/xml" --data-binary @status.xml \
 
 El resultado será el siguiente.
 
-```xml {6}
+```xml {6,7}
 <?xml version="1.0" encoding="UTF-8"?>
 <S:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
     <S:Body>
