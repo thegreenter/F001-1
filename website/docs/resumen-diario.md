@@ -27,6 +27,8 @@ Necesitamos incluir la siguiente información por cada comprobante a enviar en e
 
 - Tipo de comprobante
 - Serie y correlativo del comprobante
+- Fecha de Emisión
+- Moneda
 - Datos del receptor
 - Impuestos globales
 - Totales
@@ -44,3 +46,21 @@ Adicionalmente necesitamos un identificador de este documento, que sigue el sigu
 - `RC`: Valor constante
 - `<Fecha>`: Fecha del resumen diario en formato `YYYYMMDD`.
 - `<Correlativo>`: Correlativo definido por el emisor, puede contener hasta 5 digitos.
+
+## Ejemplo
+
+En este ejemplo comunicaremos la emisión de una boleta y una nota de crédito relacionada a boleta, y tambien la anulación de boleta en el mismo dia.
+
+Datos de los comprobantes
+
+Campo | Boleta 1 | Nota Credito 1 | Boleta 2
+-|-|-|-|
+Tipo | 03 | 07 | 03
+Numero | B001-22 | BC01-3 | BA01-11
+Fecha | 2020-10-22 | 2020-10-22 | 2020-10-22
+Moneda | Soles (PEN) | Soles (PEN) | Soles (PEN)
+DNI Receptor | 33224567 | 44112576 | 00538572
+Total Gravadas | 1000 | 100 | 200
+IGV | 180 | 18 | 36
+Total | 1180 | 118 | 236
+Estado | 1 | 1 | 3 
