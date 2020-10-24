@@ -45,7 +45,7 @@ Y gracias a herramientas existentes podemos hacerlo con un solo comando; utiliza
 nuestro xml de la sección [anterior](factura.md) y con `xmllint` ejecutaremos:
 
 ```sh
-xmllint --c14n 20123456789-01-F001-1.xml > 20123456789-01-F001-1_c14.xml
+xml c14n --without-comments 20123456789-01-F001-1.xml > 20123456789-01-F001-1_c14.xml
 ```
 
 Con ello tendremos nuestro xml canónico, este seria el resultado.
