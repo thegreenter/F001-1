@@ -244,12 +244,12 @@ Ahora utilizando el algoritmo `sha1` que se indica en `<SignatureMethod>`, proce
 ```sh
 openssl dgst -sha1 -sign private.key sign-info.xml | openssl enc -base64
 # output:
-# AsuimaYXwnrBFqftXUCDkh9e8Hkwl9ohB9Nj687rLYRwFzWQWHvg2V6u3YgUZLw6
-# CyHo3wcDm2MIF2V923cjIeniGBIBeer1YnLA8nX1prRPODM+DfFmwZ1rR12jVqcH
-# tydjB1yypi3h/fj6yBTOBenunFw2B1EEsn/9nuMuC0CMgcD/lxZXGgnWajDXcFaD
-# vXJ2U8sXWJVZANyuzhBzZmE086e9F+v+aOEa2UUzD8ldZ6N0+Jwr8VqVkcUVIjst
-# LP+Ond+OkyPdSxx2Hp4oNlwp2clf0fmC4NtQOrlXEEYcr3NPi5szfxZY//E+XITw
-# Mo9NSFs/+bHaOR2EjPZrkg==
+# s/YMWZEOdpeiQ6olgb88ICppr8wOE6fNvmLZ/PQd5BTTN+fTCHOvAj8snOs7MAhP
+# PsO8cm3HiUeiReEiI1pHpJFpwLK8MjdSbemPqI/5wChMW4czhw7eRLHDMhiotNfe
+# imCDU1rRG18VG+ipE5oHjQOsa1x5z9ogZ0qXIfmGIx84RoLl8mBjnnGVWlxsmzWz
+# Ep+785MJWa6O1BDusO8kxFkGdTiTtTanWtyq5W0cAcnxZdjelPZ5ME40DEuYDqZw
+# g3dW1/i7fiS2KbUgvHN0v6QSht82fp2LhtK72NDDDRP4VX8ge9a2wAQMgZcRI26f
+# 4Nh6kYaldGKGi6T4Lmh6YQ==
 ```
 
 Después de esto, necesitamos incluir el resultado en el xml original, además incluiremos el certificado (`certificate.cer`) en el nodo `<ds:X509Certificate>`, para que terceros pueden verificar la autenticidad del comprobante electrónico.
