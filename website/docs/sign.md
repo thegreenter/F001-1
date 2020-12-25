@@ -273,10 +273,15 @@ Este sería el resultado de nuestro comprobante electrónico firmado digitalment
       <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
     </ds:Transforms>
     <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
-    <ds:DigestValue>Z5ohtioRKAsJTIote7n2BPYweik=</ds:DigestValue>
+    <ds:DigestValue>/wKIPKeZOhFEIOIyP1+T4AJDpfw=</ds:DigestValue>
   </ds:Reference>
 </ds:SignedInfo>
-<ds:SignatureValue>AsuimaYXwnrBFqftXUCDkh9e8Hkwl9ohB9Nj687rLYRwFzWQWHvg2V6u3YgUZLw6 CyHo3wcDm2MIF2V923cjIeniGBIBeer1YnLA8nX1prRPODM+DfFmwZ1rR12jVqcH tydjB1yypi3h/fj6yBTOBenunFw2B1EEsn/9nuMuC0CMgcD/lxZXGgnWajDXcFaD vXJ2U8sXWJVZANyuzhBzZmE086e9F+v+aOEa2UUzD8ldZ6N0+Jwr8VqVkcUVIjst LP+Ond+OkyPdSxx2Hp4oNlwp2clf0fmC4NtQOrlXEEYcr3NPi5szfxZY//E+XITw Mo9NSFs/+bHaOR2EjPZrkg==</ds:SignatureValue>
+<ds:SignatureValue>s/YMWZEOdpeiQ6olgb88ICppr8wOE6fNvmLZ/PQd5BTTN+fTCHOvAj8snOs7MAhP
+PsO8cm3HiUeiReEiI1pHpJFpwLK8MjdSbemPqI/5wChMW4czhw7eRLHDMhiotNfe
+imCDU1rRG18VG+ipE5oHjQOsa1x5z9ogZ0qXIfmGIx84RoLl8mBjnnGVWlxsmzWz
+Ep+785MJWa6O1BDusO8kxFkGdTiTtTanWtyq5W0cAcnxZdjelPZ5ME40DEuYDqZw
+g3dW1/i7fiS2KbUgvHN0v6QSht82fp2LhtK72NDDDRP4VX8ge9a2wAQMgZcRI26f
+4Nh6kYaldGKGi6T4Lmh6YQ==</ds:SignatureValue>
 <ds:KeyInfo>
   <ds:X509Data>
     <ds:X509Certificate>MIID6zCCAtOgAwIBAgIUJB9kdlrtEuCWZW/hB+k6bt/FL7AwDQYJKoZIhvcNAQELBQAwgYQxCzAJBgNVBAYTAlBFMQ0wCwYDVQQIDARMSU1BMQ0wCwYDVQQHDARMSU1BMRgwFgYDVQQKDA9JTU0gQ09SUE9SQVRJT04xCzAJBgNVBAsMAklUMQwwCgYDVQQDDANJTU0xIjAgBgkqhkiG9w0BCQEWE2dpYW5zYWxleEBnbWFpbC5jb20wHhcNMjAwNzE5MjIwNDM2WhcNMzAwNTI4MjIwNDM2WjCBhDELMAkGA1UEBhMCUEUxDTALBgNVBAgMBExJTUExDTALBgNVBAcMBExJTUExGDAWBgNVBAoMD0lNTSBDT1JQT1JBVElPTjELMAkGA1UECwwCSVQxDDAKBgNVBAMMA0lNTTEiMCAGCSqGSIb3DQEJARYTZ2lhbnNhbGV4QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMjdt0KR5Bb/nIH1dGMKBkYlSHeScl5Go+KD4LEKDwi4hFcKvOI7XbNk1QoFmcKIPJuZvpBpqaadNRKidqAPxbrzMF+yxXI7QwlsVgweW+L64bXCtX4AlnRaCCIx0SrXYUrktVWWlQpaJGvF7n3Mbge+8P9jkyQ7XlAuVVRN2wk40G1UPWMYRVaVjas4JPh7eTft1B6R1d1njM5/dD3UJ0qSfgjw5b8FJae6Up5eEDAfcjkJihqVBtQHXI8yEHMRqx22OF8VsT+AsrylYGDpDesCz9WrF0cWpg3XNT1YUV5YfwqCNBK4vN++5qgA9Q+MYmE+KdZ0mFmMZxlm6NOeQfUCAwEAAaNTMFEwHQYDVR0OBBYEFLEP+8lmc8esD3bMYoSivwthb6gHMB8GA1UdIwQYMBaAFLEP+8lmc8esD3bMYoSivwthb6gHMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBACsrChqr7MpgEN0I+IqmgG4Kd4M5BBiz7jabnXMwcQfeduLL1RV7JkbI4EWF+SSpjpdojM35bxb8lyA43GpiFIaEAWa2frUJi/hXxvTn5eojwi6FU0zs7mHBHUSU+aOjBp/6TTnGR8LEemSJ1o7shaxHTaquNOHol/JV0QFTCn1hMPo44jpNwiDOngKDAc9TvQ3YUIURGrrE3j35c5KNGr4wDjjcjFky4OBhFRALU+9ff/Gergv03xyUDnfMtzYNomM15xO0jYou8FeQd7vzyh56ekJpI+EkX3YM/zABa/5NwXSpNK79gaWxS1SSuXrCZU4pqnVVy96V1zq5t1umbvA=</ds:X509Certificate>
@@ -377,8 +382,8 @@ Este sería el resultado de nuestro comprobante electrónico firmado digitalment
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:PaymentTerms>
-      <cbc:ID>FormaPago</cbc:ID>
-      <cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
+    <cbc:ID>FormaPago</cbc:ID>
+    <cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="PEN">18.00</cbc:TaxAmount>
