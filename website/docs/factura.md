@@ -27,7 +27,7 @@ Utilizaremos un ejemplo básico para elaborar esta primera factura.
 | Valor Venta            | S/ 100.00    |
 | IGV                    | S/ 18.00     |
 | Importe Total          | S/ 118.00    |
-
+| Forma de Pago          | Contado      |
 
 **Detalle**    
 
@@ -185,6 +185,11 @@ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
       </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <!-- Forma de Pago -->
+  <cac:PaymentTerms>
+      <cbc:ID>FormaPago</cbc:ID>
+      <cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <!-- Total impuestos -->
     <cbc:TaxAmount currencyID="PEN">18.00</cbc:TaxAmount>
