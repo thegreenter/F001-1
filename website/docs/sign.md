@@ -372,6 +372,10 @@ Este sería el resultado de nuestro comprobante electrónico firmado digitalment
       </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PaymentTerms>
+      <cbc:ID>FormaPago</cbc:ID>
+      <cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="PEN">18.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
