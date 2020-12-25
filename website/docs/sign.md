@@ -127,6 +127,10 @@ Con ello tendremos nuestro xml canónico, este seria el resultado.
       </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PaymentTerms>
+    <cbc:ID>FormaPago</cbc:ID>
+    <cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
+  </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="PEN">18.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -201,7 +205,7 @@ Es el hash generado a partir del contenido de nuestro XML canónico (`c14n`), ut
 ```sh
 openssl dgst -sha1 -binary 20123456789-01-F001-1_c14.xml  | openssl enc -base64
 # output:
-# Z5ohtioRKAsJTIote7n2BPYweik=
+# /wKIPKeZOhFEIOIyP1+T4AJDpfw=
 ```
 
 :::tip Representación impresa
@@ -224,7 +228,7 @@ En este punto, se realizará la firma utilizando el certificado digital; definir
       <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
     </ds:Transforms>
     <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
-    <ds:DigestValue>Z5ohtioRKAsJTIote7n2BPYweik=</ds:DigestValue>
+    <ds:DigestValue>/wKIPKeZOhFEIOIyP1+T4AJDpfw=</ds:DigestValue>
   </ds:Reference>
 </ds:SignedInfo>
 ```
