@@ -170,7 +170,7 @@ En la siguiente trama reemplazar el resultado en la marca `ZIP_BASE_64`, además
       <ns2:Security>
          <ns2:UsernameToken>
             <ns2:Username>20123456789MODDATOS</ns2:Username>
-            <o:Password xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">moddatos</o:Password>
+            <ns2:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">moddatos</ns2:Password>
          </ns2:UsernameToken>
       </ns2:Security>
    </SOAP-ENV:Header>
