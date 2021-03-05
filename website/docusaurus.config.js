@@ -18,6 +18,7 @@ module.exports = {
     },
     navbar: {
       title: 'FE Primer',
+      hideOnScroll: true,
       logo: {
         alt: 'Sunat FE logo',
         src: 'img/logo.svg',
@@ -31,8 +32,13 @@ module.exports = {
         },
         //{to: 'blog', label: 'Blog', position: 'left'},
         {
+          href: 'https://greenter.dev/',
+          label: 'Greenter',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/thegreenter/F001-1',
-          label: 'GitHub',
+          className: 'header-github-link',
           position: 'right',
         },
       ],
@@ -69,6 +75,10 @@ module.exports = {
               label: 'GitHub',
               href: 'https://github.com/thegreenter/F001-1',
             },
+            {
+              label: 'Greenter',
+              href: 'https://greenter.dev/',
+            },
           ],
         },
       ],
@@ -81,7 +91,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'introduction',
+          // homePageId: 'introduction',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
