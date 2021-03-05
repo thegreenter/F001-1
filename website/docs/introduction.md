@@ -2,6 +2,7 @@
 id: introduction
 title: FE Primer
 sidebar_label: Introducción
+slug: /
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
