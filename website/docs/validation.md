@@ -14,8 +14,8 @@ Para verificar que nuestros comprobantes sean válidos, existen 2 tipos de valid
 
 ## Herramientas
 Para completar esta sección necesitaremos utilizar algunas herramientas.
-- [`xmllint`](http://xmlsoft.org/xmllint.html)
-- [`xsltproc`](http://xmlsoft.org/XSLT/xsltproc.html)
+- [xmllint](http://xmlsoft.org/xmllint.html)
+- [xsltproc](http://xmlsoft.org/XSLT/xsltproc.html)
 
 Tambien necesitaremos un comprobante XML a validar, utilizaremos el XML creado en la sección anterior.
 
@@ -146,8 +146,7 @@ Esta será la estructura del directorio de trabajo.
 
 :::warning XSLT Patch
 
-Aunque los archivos XSL que SUNAT expone siguen la version [XSLT 1.0](https://www.w3.org/TR/xslt-10/), no es totalmente compatible, para este ejemplo hemos corregido el XSL de factura y los xsl referenciados, puedes descargarlo <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/xsl-validation.zip" target="_blank">aquí</a>.    
-Si necesitas todos los XSL estandarizados puedes [contactarnos](https://web.facebook.com/thegreenter).
+Aunque los archivos XSL que SUNAT ofrece siguen la version [XSLT 1.0](https://www.w3.org/TR/xslt-10/), no es totalmente compatible, para este ejemplo hemos corregido el XSL de factura y los xsl referenciados, puedes descargarlo <a href="https://github.com/thegreenter/F001-1/releases/download/v1.0/xsl-validation.zip" target="_blank">aquí</a>.    
 
 :::
 
@@ -183,7 +182,7 @@ La moneda utilizada era `PEN`, la cambiaremos por `BTC`.
         listAgencyName="United Nations Economic Commission for Europe">BTC</cbc:DocumentCurrencyCode>
 ```
 
-Ejecutar la validación.
+Ejecutando la validación.
 ```bash
 xsltproc --noout --stringparam nombreArchivoEnviado 20123456789-01-F001-1.xml sunat_archivos/sfs/VALI/commons/xsl/validation/2.X/ValidaExprRegFactura-2.0.1.xsl 20123456789-01-F001-1.xml
 ```
@@ -193,7 +192,11 @@ Resultado:
  error: : errorCode 3088: Valor no se encuentra en el catalogo: 02 (nodo: "Invoice/cbc:DocumentCurrencyCode" valor: "BTC")
 ```
 
-_Código `3088`: **El valor ingresado como moneda del comprobante no es valido (catalogo nro 02).**_
+Según los códigos de retorno de SUNAT:
+
+Código | Descripción |
+-|-|
+**3088** | El valor ingresado como moneda del comprobante no es valido (catalogo nro 02). |
 
   </TabItem>
   <TabItem value="caso2">
@@ -235,10 +238,14 @@ Resultado:
 4301INFO : errorCode 4301 (nodo: "cac:TaxTotal/cbc:TaxAmount" valor: "5.00")
 ```
 
-_Código `4301`: **La sumatoria de impuestos globales no corresponde al monto total de impuestos._**
+Según los códigos de retorno de SUNAT:
+
+Código | Descripción |
+-|-|
+**4301** | La sumatoria de impuestos globales no corresponde al monto total de impuestos. |
 
   </TabItem>
 </Tabs>
 
 
-Todas las validaciones se pueden constatar con en el archivo [excel de Reglas de validación](https://cpe.sunat.gob.pe/node/88#item-3), y allí podremos tener mayor información de cada codigo de error y como resolverlo.
+Todas las validaciones se pueden constatar con en el archivo [excel de Reglas de validación](https://cpe.sunat.gob.pe/node/88#item-3), allí podremos tener mayor información de cada codigo de error y como resolverlo.
