@@ -235,11 +235,12 @@ En este punto, se realizará la firma utilizando el certificado digital; definir
 
 :::note
 
-**Uri=""** en `<ds:Reference URI="">` indica que se firma todo el archivo xml y no solo un nodo, y  en `<DigestMethod Algorithm="...">` ubicamos el algoritmo (`sha1`) que se utilizó para generar el valor resumen.
+En `<ds:CanonicalizationMethod>` se encuentra el método `c14n` utilizado anteriormente, luego 
+**Uri=""** en `<ds:Reference>` indica que se firma todo el archivo xml y no un nodo en específico, en `<DigestMethod>` ubicamos el algoritmo (`sha1`) que se utilizó para generar el valor resumen.
 
 :::
 
-Ahora utilizando el algoritmo `sha1` que se indica en `<SignatureMethod>`, procedemos a obtener el valor de la firma con `openssl`, codificado en `base64`.
+Ahora utilizando el algoritmo `SHA1` que se indica en `<SignatureMethod>`, procedemos a obtener el valor de la firma con `openssl` codificado en `base64`.
 
 ```sh
 openssl dgst -sha1 -sign private.key sign-info.xml | openssl enc -base64
@@ -474,4 +475,4 @@ xmlsec verify 20123456789-01-F001-1.xml
 
 ## Comentarios
 
-Esto puede ser un proceso complicado, para ello generalmente ya existen las librerias en cada lenguaje de programación que hacen todo este proceso por defecto, y sin mayor intervención de nuestro lado. [Ver lista](tools.md#firma-digital).
+Esto proceso puede ser complicado, pero según el lenguaje de programación que utilicemos ya existen las librerias que hacen todo este proceso por defecto, y sin mayor intervención de nuestro lado. [Ver lista](tools.md#firma-digital).
