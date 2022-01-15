@@ -56,7 +56,7 @@ Ejemplos válidos e inválidos:
 - ❌ `B01`
 
 :::tip Notas de Crédito y Débito
-Si una nota de credito/debito se emite referenciando a una boleta, esta debe cumplir con el mismo formato de serie, es decir para el caso de Facturas, sus notas de credito/debito deben tener series que empiecen con la letra `B`.
+Si una nota de credito/debito se emite referenciando a una boleta, esta debe cumplir con el mismo formato de serie, es decir para el caso de Boletas, sus notas de credito/debito deben tener series que empiecen con la letra `B`.
 :::
 
 :::note
