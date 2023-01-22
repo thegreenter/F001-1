@@ -6,11 +6,11 @@ sidebar_label: Dar de baja
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Para anular o dar de baja un comprobante electrónico, SUNAT a definido un esquema XML nombrado como `VoidedDocuments`. En este documento se pueden informar varios comprobantes siempre que hayan sido emitidos en la misma fecha.
+Para anular o dar de baja un comprobante electrónico, SUNAT ha definido un esquema XML nombrado como `VoidedDocuments`. En este documento se pueden informar varios comprobantes siempre que hayan sido emitidos en la misma fecha.
 
 :::note Versión UBL
 
-Aunque este documento (`VoidedDocuments`) no forma parte del estándar UBL, SUNAT a decido asignarle la version `UBL 2.0`
+Aunque este documento (`VoidedDocuments`) no forma parte del estándar UBL, SUNAT ha decido asignarle la version `UBL 2.0`
 
 :::
 
