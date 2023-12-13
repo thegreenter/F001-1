@@ -124,7 +124,7 @@ El estructura del XML para una comunicacion de baja.
         <!-- Numero secuencial -->
         <cbc:LineID>2</cbc:LineID>
         <!-- Tipo de comprobante -->
-        <cbc:DocumentTypeCode>01</cbc:DocumentTypeCode>
+        <cbc:DocumentTypeCode>07</cbc:DocumentTypeCode>
         <!-- Serie del comprobante -->
         <sac:DocumentSerialID>FC01</sac:DocumentSerialID>
         <!-- Correlativo del comprobante -->
