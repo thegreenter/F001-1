@@ -10,7 +10,7 @@ La facturación electrónica implica conocer algunos aspectos que difieren de la
 Hay una lista de comprobantes que se pueden emitir electrónicamente, aunque no todos se pueden emitir desde los sistemas del contribuyente (SEE).
 
 
-|Compobante                      |  SEE  |
+|Comprobante                     |  SEE  |
 |--------------------------------|-------|
 | Factura                        |  ✅   |
 | Boleta                         |  ✅   |
@@ -27,7 +27,7 @@ Hay una lista de comprobantes que se pueden emitir electrónicamente, aunque no 
 Al emitir comprobantes electrónicos ya no necesita autorizar o informar a SUNAT las series que utilizará, pero debe seguir ciertos criterios que verá a continuación, en el caso de los correlativos siguen siendo numéricos.
 
 ### Factura
-La serie de facturas empiezan con la letra `F`, seguido de 3 caracterse alfanumericos.   
+La serie de facturas empiezan con la letra `F`, seguido de 3 caracteres alfanumericos.   
 Ejemplos válidos e inválidos:
 
 - ✔️ `F001` 
@@ -39,13 +39,13 @@ Ejemplos válidos e inválidos:
 
 :::tip Notas de Crédito y Débito
 
-Si una nota de credito/debito se emite referenciando a una factura, esta debe cumplir con el mismo formato de serie, es decir para el caso de Facturas, sus notas de credito/debito deben tener series que empiecen con la letra `F`.
+Si una nota de crédito/débito se emite referenciando a una factura, esta debe cumplir con el mismo formato de serie, es decir para el caso de Facturas, sus notas de crédito/débito deben tener series que empiecen con la letra `F`.
 
 :::
 
 
 ### Boleta de Venta
-La serie de boletas de venta empiezan con la letra `B`, seguido de 3 caracterse alfanumericos.   
+La serie de boletas de venta empiezan con la letra `B`, seguido de 3 caracteres alfanumericos.   
 Ejemplos válidos e inválidos:
 
 - ✔️ `B001` 
@@ -56,7 +56,7 @@ Ejemplos válidos e inválidos:
 - ❌ `B01`
 
 :::tip Notas de Crédito y Débito
-Si una nota de credito/debito se emite referenciando a una boleta, esta debe cumplir con el mismo formato de serie, es decir para el caso de Boletas, sus notas de credito/debito deben tener series que empiecen con la letra `B`.
+Si una nota de crédito/débito se emite referenciando a una boleta, esta debe cumplir con el mismo formato de serie, es decir para el caso de Boletas, sus notas de crédito/débito deben tener series que empiecen con la letra `B`.
 :::
 
 :::note
@@ -76,16 +76,16 @@ SUNAT expone varios `webservices` basados en `SOAP` (para pruebas y producción)
 
 :::caution Plazos
 
-Los comprobantes deberian ser comunicados a SUNAT lo mas pronto posible, posterior a su emisión, aunque tienen **un plazo de 7 dias**.
+Los comprobantes deberían ser comunicados a SUNAT lo más pronto posible, posterior a su emisión, aunque tienen **un plazo de 7 días**.
 
 :::
 
 ## Terceras partes
-Sunat ha delegado cierta responsibilidad sobre algunas empresas para llevar a cabo el proceso de facturación electrónica en el pais, hay una clasificacion de esto.
+Sunat ha delegado cierta responsabilidad sobre algunas empresas para llevar a cabo el proceso de facturación electrónica en el pais, hay una clasificacion de esto.
 
 ### Proveedor de Servicios Electrónicos (PSE)
-En la práctica utilizan sus certificados digitales para firmar los comprobantes electrónicos (XML) de otras empresas, esto quiere decir que la empresa no tendra que adquirir un certificado digital por su cuenta.   
-Además guian en la implementación de la `FE` en los sistemas del contribuyente, muchos de ellos ofrecen formatos alternativos a los XML (`json`, `text`) para el envío desde los sistemas de sus clientes, posteriormente ellos se encargaran de generar los archivos XML, firmarlos, enviarlos a SUNAT y cumplir con otras obligaciones que exige SUNAT.   
+En la práctica utilizan sus certificados digitales para firmar los comprobantes electrónicos (XML) de otras empresas, esto quiere decir que la empresa no tendrá que adquirir un certificado digital por su cuenta.   
+Además guian en la implementación de la `FE` en los sistemas del contribuyente, muchos de ellos ofrecen formatos alternativos a los XML (`json`, `text`) para el envío desde los sistemas de sus clientes, posteriormente ellos se encargarán de generar los archivos XML, firmarlos, enviarlos a SUNAT y cumplir con otras obligaciones que exige SUNAT.   
 
 ### Operador de Servicios Electrónicos (OSE)
 Ayuda a SUNAT en la recepción de los comprobantes electrónicos, en teoria mantiene la interoperabilidad con los `webservices` expuestos por SUNAT, de modo que el proceso de cambiar de un operador a otro seria muy sencillo. 
